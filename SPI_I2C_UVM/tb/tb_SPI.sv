@@ -66,3 +66,26 @@ class SPI_driver extends uvm_driver #(SPI_seq_item);
     endtask //
 
 endclass //SPI_driver extends uvm_driver #(SPI_seq_item)
+
+class SPI_monitor extends uvm_monitor;
+    `uvm_component_utils(SPI_monitor)
+
+    uvm_analysis_port #(SPI_seq_item) send;
+
+    function new(string name = "MON", uvm_component parent);
+        super.new(name, parent);
+        send = new("WRITE", this);
+    endfunction //new()
+
+    SPI_seq_item SPI_item;
+    virtual SPI_if S_if;
+
+    virtual function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
+        SPI_item = SPI_seq_item::type_id::create("ITEM");
+        if (!uvm_config_db#(virtual SPI_if)::get(this, "", "a_if", a_if)) begin
+            `uvm_fatal("MON", "SPI_if not found in uvm_config_db");
+        end
+        
+    endfunction
+endclass //SPI_monitor extends uvm_monitor
