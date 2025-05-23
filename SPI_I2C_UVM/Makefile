@@ -1,8 +1,10 @@
 RTL_DIR 	= ./rtl
 TB_DIR 		= ./tb
 BUILD_DIR 	= ./build
-DUT			= $(RTL_DIR)/adder.v
-TEST_BENCH	= $(TB_DIR)/tb_adder.sv
+DUT			= $(RTL_DIR)/SPI_Master.v \
+			  $(RTL_DIR)/SPI_Slave.v \
+			  $(RTL_DIR)/SPI_top.v
+TEST_BENCH	= $(TB_DIR)/tb_SPI.sv
 LOG			= simv.log
 COMP_OPT	= -full64 -sverilog -ntb_opts uvm-1.2 \
 			-debug_access+all -kdb \

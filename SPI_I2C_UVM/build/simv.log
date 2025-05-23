@@ -1,0 +1,115 @@
+Command: /home/hedu22/dev/SPI_I2C_UVM/././build/simv +UVM_TESTNAME=test -l ././build/simv.log +fsdbfile+./build/wave.fsdb
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  May 23 16:13 2025
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test test...
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(589) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               test                    -     @342 
+  ENV                      SPI_environment         -     @361 
+    AGT                    SPI_agent               -     @389 
+      DRV                  SPI_driver              -     @418 
+        rsp_port           uvm_analysis_port       -     @437 
+        seq_item_port      uvm_seq_item_pull_port  -     @427 
+      MON                  SPI_monitor             -     @399 
+        WRITE              uvm_analysis_port       -     @408 
+      SQR                  uvm_sequencer           -     @447 
+        rsp_export         uvm_analysis_export     -     @456 
+        seq_item_export    uvm_seq_item_pull_imp   -     @574 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    SCO                    SPI_scoreboard          -     @370 
+      READ                 uvm_analysis_imp        -     @379 
+--------------------------------------------------------------
+
+
+UVM_INFO ./tb/tb_SPI.sv(67) @ 0: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] SPI item to drive tx_data:45
+UVM_INFO ./tb/tb_SPI.sv(101) @ 5000: uvm_test_top.ENV.AGT.DRV [DRV] DRIVE DUT tx_data:45
+
+UVM_INFO ./tb/tb_SPI.sv(67) @ 6000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] SPI item to drive tx_data:201
+UVM_INFO ./tb/tb_SPI.sv(101) @ 15000: uvm_test_top.ENV.AGT.DRV [DRV] DRIVE DUT tx_data:201
+
+UVM_INFO ./tb/tb_SPI.sv(67) @ 16000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] SPI item to drive tx_data:53
+UVM_INFO ./tb/tb_SPI.sv(101) @ 25000: uvm_test_top.ENV.AGT.DRV [DRV] DRIVE DUT tx_data:53
+
+UVM_INFO ./tb/tb_SPI.sv(67) @ 26000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] SPI item to drive tx_data:132
+UVM_INFO ./tb/tb_SPI.sv(101) @ 35000: uvm_test_top.ENV.AGT.DRV [DRV] DRIVE DUT tx_data:132
+
+UVM_INFO ./tb/tb_SPI.sv(67) @ 36000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] SPI item to drive tx_data:195
+UVM_INFO ./tb/tb_SPI.sv(101) @ 45000: uvm_test_top.ENV.AGT.DRV [DRV] DRIVE DUT tx_data:195
+
+UVM_INFO ./tb/tb_SPI.sv(67) @ 46000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] SPI item to drive tx_data:123
+UVM_INFO ./tb/tb_SPI.sv(101) @ 55000: uvm_test_top.ENV.AGT.DRV [DRV] DRIVE DUT tx_data:123
+
+UVM_INFO ./tb/tb_SPI.sv(67) @ 56000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] SPI item to drive tx_data:99
+UVM_INFO ./tb/tb_SPI.sv(101) @ 65000: uvm_test_top.ENV.AGT.DRV [DRV] DRIVE DUT tx_data:99
+
+UVM_INFO ./tb/tb_SPI.sv(67) @ 66000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] SPI item to drive tx_data:159
+UVM_INFO ./tb/tb_SPI.sv(101) @ 75000: uvm_test_top.ENV.AGT.DRV [DRV] DRIVE DUT tx_data:159
+
+UVM_INFO ./tb/tb_SPI.sv(67) @ 76000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] SPI item to drive tx_data:106
+UVM_INFO ./tb/tb_SPI.sv(101) @ 85000: uvm_test_top.ENV.AGT.DRV [DRV] DRIVE DUT tx_data:106
+
+UVM_INFO ./tb/tb_SPI.sv(67) @ 86000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] SPI item to drive tx_data:213
+UVM_INFO ./tb/tb_SPI.sv(101) @ 95000: uvm_test_top.ENV.AGT.DRV [DRV] DRIVE DUT tx_data:213
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 96000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 96000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 96000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   25
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[DRV]    10
+[RNTST]     1
+[SEQ]    10
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[UVMTOP]     1
+
+$finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time                96000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 96000 ps
+CPU Time:      0.190 seconds;       Data structure size:   0.6Mb
+Fri May 23 16:13:24 2025
