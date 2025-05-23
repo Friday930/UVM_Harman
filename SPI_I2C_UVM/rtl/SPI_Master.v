@@ -59,10 +59,10 @@ module SPI_Master (
         done              = 0;
         case (state)
             IDLE: begin
-                done              = 0;
                 ready             = 1;
                 if (start) begin
                     ready             = 0;
+                    done              = 0;
                     sclk_counter_next = 0;
                     bit_counter_next  = 0;
                     if (cpha) next = DELAY;

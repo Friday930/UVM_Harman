@@ -2,7 +2,7 @@ Command: vcs -full64 -sverilog -ntb_opts uvm-1.2 -debug_access+all -kdb -timesca
 -Mdir=./build/csrc -o ./build/simv -l ./build/comp.log ./rtl/adder.v ./tb/tb_adder.sv \
 
                          Chronologic VCS (TM)
-       Version W-2024.09-SP1_Full64 -- Fri May 16 11:20:55 2025
+       Version W-2024.09-SP1_Full64 -- Fri May 23 18:47:01 2025
 
                     Copyright (c) 1991 - 2024 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -374,7 +374,7 @@ fi
 g++  -o /home/hedu22/dev/0515_uvm_adder/./build/simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir \
 -Wl,-rpath=./simv.daidir -Wl,-rpath=/tools/synopsys/vcs/W-2024.09-SP1/linux64/lib \
 -L/tools/synopsys/vcs/W-2024.09-SP1/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1 \
-uvm_dpi.o uvm_verdi_dpi.o   objs/amcQw_d.o  _30614_archive_1.so _prev_archive_1.so \
+uvm_dpi.o uvm_verdi_dpi.o   objs/amcQw_d.o  _2786910_archive_1.so _prev_archive_1.so \
 SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
 -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /tools/synopsys/vcs/W-2024.09-SP1/linux64/lib/vcs_tls.o \
 -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive      ./../simv.daidir/vc_hdrs.o \
@@ -383,5 +383,5 @@ _vcs_pli_stub_.o   /tools/synopsys/vcs/W-2024.09-SP1/linux64/lib/vcs_save_restor
 -ldl 
 /home/hedu22/dev/0515_uvm_adder/./build/simv up to date
 make[1]: Leaving directory '/home/hedu22/dev/0515_uvm_adder/build/csrc'
-CPU time: 4.940 seconds to compile + .195 seconds to elab + .344 seconds to link
+CPU time: 4.695 seconds to compile + .190 seconds to elab + .337 seconds to link
 Verdi KDB elaboration done and the database successfully generated
