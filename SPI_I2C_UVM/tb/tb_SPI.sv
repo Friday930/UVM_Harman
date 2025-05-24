@@ -235,8 +235,8 @@ class SPI_monitor extends uvm_monitor;
                 SPI_item.start = S_if.start;
                 SPI_item.done = S_if.done;
                 SPI_item.SS = S_if.SS;
-                `uvm_info("MON", $sformatf("sampled tx:%0d, rx:%0d, done:%0d", 
-                        SPI_item.tx_data, SPI_item.rx_data, SPI_item.done), UVM_NONE);
+                `uvm_info("MON", $sformatf("sampled tx:%0d, rx:%0d", 
+                        SPI_item.tx_data, SPI_item.rx_data), UVM_NONE);
 
                 send.write(SPI_item);
             end
@@ -267,9 +267,9 @@ class SPI_scoreboard extends uvm_scoreboard;
         // SPI_item.print(uvm_default_line_printer);
 
         if (SPI_item.rx_data == SPI_item.tx_data) begin
-           `uvm_info("SCO", $sformatf("*** TEST PASSED ***"), UVM_NONE); 
+           `uvm_info("SCO", "*** TEST PASSED ***", UVM_NONE); 
         end else begin
-            `uvm_error("SCO", $sformatf("*** TEST FAILED ***"));
+            `uvm_error("SCO", "*** TEST FAILED ***");
         end
         
     endfunction

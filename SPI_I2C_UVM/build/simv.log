@@ -1,7 +1,7 @@
 Command: /home/hedu22/dev/SPI_I2C_UVM/././build/simv +UVM_TESTNAME=test -l ././build/simv.log +fsdbfile+./build/wave.fsdb
 Chronologic VCS simulator copyright 1991-2024
 Contains Synopsys proprietary information.
-Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  May 24 18:35 2025
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  May 24 20:05 2025
 UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
 ----------------------------------------------------------------
 UVM-1.2.Synopsys
@@ -28,10 +28,12 @@ UVM-1.2.Synopsys
 FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2, Linux x86_64/64bit, 03/03/2025
 (C) 1996 - 2025 by Synopsys, Inc.
 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-*Verdi* : Create FSDB file './build/wave.fsdb'
-*Verdi* : Begin traversing the scopes, layer (0).
-*Verdi* : End of traversing.
+*Verdi* FSDB WARNING: Simv_lock file is locked (./build/wave.fsdb.slock). Attempt to overwrite the FSDB (./build/wave.fsdb.slock) which is currently written by other process is not permitted
+*Verdi* ERROR: Failed to create FSDB file: './build/wave.fsdb'.
 *Verdi* WARNING: Env/runtime option has specified fsdbfile name as "./build/wave.fsdb". Fsdbfile name in task "wave.fsdb" is ignored.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* FSDB WARNING: Simv_lock file is locked (./build/wave.fsdb.slock). Attempt to overwrite the FSDB (./build/wave.fsdb.slock) which is currently written by other process is not permitted
+*Verdi* ERROR: Failed to create FSDB file: './build/wave.fsdb'.
 UVM_INFO @ 0: reporter [RNTST] Running test test...
 UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(589) @ 0: reporter [UVMTOP] UVM testbench topology:
 --------------------------------------------------------------
@@ -58,52 +60,52 @@ uvm_test_top               test                    -     @342
 
 UVM_INFO ./tb/tb_SPI.sv(86) @ 195000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 45
 UVM_INFO ./tb/tb_SPI.sv(178) @ 205000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=45
-UVM_INFO ./tb/tb_SPI.sv(238) @ 8206000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:45, rx:45, done:1
+UVM_INFO ./tb/tb_SPI.sv(238) @ 8206000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:45, rx:45
 UVM_INFO ./tb/tb_SPI.sv(266) @ 8206000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:45
 UVM_INFO ./tb/tb_SPI.sv(270) @ 8206000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
 UVM_INFO ./tb/tb_SPI.sv(86) @ 8225000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 201
 UVM_INFO ./tb/tb_SPI.sv(178) @ 8235000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=201
-UVM_INFO ./tb/tb_SPI.sv(238) @ 16236000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:201, rx:201, done:1
+UVM_INFO ./tb/tb_SPI.sv(238) @ 16236000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:201, rx:201
 UVM_INFO ./tb/tb_SPI.sv(266) @ 16236000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:201
 UVM_INFO ./tb/tb_SPI.sv(270) @ 16236000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
 UVM_INFO ./tb/tb_SPI.sv(86) @ 16255000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 53
 UVM_INFO ./tb/tb_SPI.sv(178) @ 16265000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=53
-UVM_INFO ./tb/tb_SPI.sv(238) @ 24266000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:53, rx:53, done:1
+UVM_INFO ./tb/tb_SPI.sv(238) @ 24266000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:53, rx:53
 UVM_INFO ./tb/tb_SPI.sv(266) @ 24266000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:53
 UVM_INFO ./tb/tb_SPI.sv(270) @ 24266000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
 UVM_INFO ./tb/tb_SPI.sv(86) @ 24285000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 132
 UVM_INFO ./tb/tb_SPI.sv(178) @ 24295000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=132
-UVM_INFO ./tb/tb_SPI.sv(238) @ 32296000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:132, rx:132, done:1
+UVM_INFO ./tb/tb_SPI.sv(238) @ 32296000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:132, rx:132
 UVM_INFO ./tb/tb_SPI.sv(266) @ 32296000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:132
 UVM_INFO ./tb/tb_SPI.sv(270) @ 32296000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
 UVM_INFO ./tb/tb_SPI.sv(86) @ 32315000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 195
 UVM_INFO ./tb/tb_SPI.sv(178) @ 32325000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=195
-UVM_INFO ./tb/tb_SPI.sv(238) @ 40326000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:195, rx:195, done:1
+UVM_INFO ./tb/tb_SPI.sv(238) @ 40326000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:195, rx:195
 UVM_INFO ./tb/tb_SPI.sv(266) @ 40326000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:195
 UVM_INFO ./tb/tb_SPI.sv(270) @ 40326000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
 UVM_INFO ./tb/tb_SPI.sv(98) @ 40345000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 0
 UVM_INFO ./tb/tb_SPI.sv(178) @ 40405000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=0
-UVM_INFO ./tb/tb_SPI.sv(238) @ 48406000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:0, rx:0, done:1
+UVM_INFO ./tb/tb_SPI.sv(238) @ 48406000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:0, rx:0
 UVM_INFO ./tb/tb_SPI.sv(266) @ 48406000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:0
 UVM_INFO ./tb/tb_SPI.sv(270) @ 48406000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
 UVM_INFO ./tb/tb_SPI.sv(98) @ 48425000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 255
 UVM_INFO ./tb/tb_SPI.sv(178) @ 48435000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=255
-UVM_INFO ./tb/tb_SPI.sv(238) @ 56436000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:255, done:1
+UVM_INFO ./tb/tb_SPI.sv(238) @ 56436000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:255
 UVM_INFO ./tb/tb_SPI.sv(266) @ 56436000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:255
 UVM_INFO ./tb/tb_SPI.sv(270) @ 56436000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
 UVM_INFO ./tb/tb_SPI.sv(98) @ 56455000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 255
 UVM_INFO ./tb/tb_SPI.sv(178) @ 56465000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=255
-UVM_INFO ./tb/tb_SPI.sv(238) @ 64466000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:255, done:1
+UVM_INFO ./tb/tb_SPI.sv(238) @ 64466000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:255
 UVM_INFO ./tb/tb_SPI.sv(266) @ 64466000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:255
 UVM_INFO ./tb/tb_SPI.sv(270) @ 64466000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
 UVM_INFO ./tb/tb_SPI.sv(98) @ 64485000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 255
 UVM_INFO ./tb/tb_SPI.sv(178) @ 64495000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=255
-UVM_INFO ./tb/tb_SPI.sv(238) @ 72496000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:255, done:1
+UVM_INFO ./tb/tb_SPI.sv(238) @ 72496000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:255
 UVM_INFO ./tb/tb_SPI.sv(266) @ 72496000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:255
 UVM_INFO ./tb/tb_SPI.sv(270) @ 72496000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
 UVM_INFO ./tb/tb_SPI.sv(98) @ 72515000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 255
 UVM_INFO ./tb/tb_SPI.sv(178) @ 72525000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=255
-UVM_INFO ./tb/tb_SPI.sv(238) @ 80526000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:255, done:1
+UVM_INFO ./tb/tb_SPI.sv(238) @ 80526000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:255
 UVM_INFO ./tb/tb_SPI.sv(266) @ 80526000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:255
 UVM_INFO ./tb/tb_SPI.sv(270) @ 80526000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
 UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 80545000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
@@ -141,5 +143,5 @@ $finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm
 $finish at simulation time             80545000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 80545000 ps
-CPU Time:      0.240 seconds;       Data structure size:   0.6Mb
-Sat May 24 18:35:00 2025
+CPU Time:      0.200 seconds;       Data structure size:   0.6Mb
+Sat May 24 20:05:37 2025
