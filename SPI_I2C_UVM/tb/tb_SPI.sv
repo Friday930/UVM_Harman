@@ -56,9 +56,7 @@ class SPI_sequence extends uvm_sequence #(SPI_seq_item);
 
     SPI_seq_item SPI_item;
 
-    virtual task body();
-        `uvm_info("SEQ", "=== Starting SPI Test Scenario ===", UVM_NONE);
-        
+    virtual task body();       
         // Write 명령 (8'b10000000) - 랜덤 데이터로 변경
         send_transaction();
         
@@ -75,7 +73,6 @@ class SPI_sequence extends uvm_sequence #(SPI_seq_item);
             send_fixed_transaction(8'hff);
         end
         
-        `uvm_info("SEQ", "=== SPI Test Scenario Completed ===", UVM_NONE);
     endtask
 
     task send_transaction();
@@ -86,7 +83,7 @@ class SPI_sequence extends uvm_sequence #(SPI_seq_item);
         SPI_item.cpol = 0;
         SPI_item.cpha = 0;
         
-        `uvm_info("SEQ", $sformatf("Random tx_data: 0x%02x", SPI_item.tx_data), UVM_NONE);
+        `uvm_info("SEQ", $sformatf("Random tx_data: %0d", SPI_item.tx_data), UVM_NONE);
         finish_item(SPI_item);
     endtask
     
@@ -98,7 +95,7 @@ class SPI_sequence extends uvm_sequence #(SPI_seq_item);
         SPI_item.cpol = 0;
         SPI_item.cpha = 0;
         
-        `uvm_info("SEQ", $sformatf("Fixed tx_data: 0x%02x", data), UVM_NONE);
+        `uvm_info("SEQ", $sformatf("Fixed tx_data: %0d", data), UVM_NONE);
         finish_item(SPI_item);
     endtask
 endclass
@@ -139,7 +136,7 @@ class SPI_driver extends uvm_driver #(SPI_seq_item);
         
         // 시나리오 시작
         S_if.SS = 0;  // 활성화
-        `uvm_info("DRV", "SS = 0 (Start of scenario)", UVM_NONE);
+        // `uvm_info("DRV", "SS = 0 (Start of scenario)", UVM_NONE);
         
         forever begin
             seq_item_port.get_next_item(SPI_item);
@@ -147,10 +144,10 @@ class SPI_driver extends uvm_driver #(SPI_seq_item);
             // SS 제어 로직
             if (transaction_count == 5) begin
                 S_if.SS = 1;  // Write 완료 후 비활성화
-                `uvm_info("DRV", "SS = 1 (End of Write phase)", UVM_NONE);
+                // `uvm_info("DRV", "SS = 1 (End of Write phase)", UVM_NONE);
                 repeat(5) @(posedge S_if.clk);  // 5 클럭 대기
                 S_if.SS = 0;  // Read 시작
-                `uvm_info("DRV", "SS = 0 (Start of Read phase)", UVM_NONE);
+                // `uvm_info("DRV", "SS = 0 (Start of Read phase)", UVM_NONE);
             end
             
             // SPI 트랜잭션 실행
@@ -162,7 +159,7 @@ class SPI_driver extends uvm_driver #(SPI_seq_item);
             // 10개 트랜잭션 완료 후 종료
             if (transaction_count >= 10) begin
                 S_if.SS = 1;  // 최종 비활성화
-                `uvm_info("DRV", "SS = 1 (End of scenario)", UVM_NONE);
+                // `uvm_info("DRV", "SS = 1 (End of scenario)", UVM_NONE);
                 break;
             end
         end
@@ -178,7 +175,7 @@ class SPI_driver extends uvm_driver #(SPI_seq_item);
         S_if.tx_data = SPI_item.tx_data;
         S_if.start = 1;
         
-        `uvm_info("DRV", $sformatf("Drive[%0d]: tx=0x%0d", transaction_count, SPI_item.tx_data), UVM_NONE);
+        `uvm_info("DRV", $sformatf("Drive dut: tx=%0d", SPI_item.tx_data), UVM_NONE);
         
         @(posedge S_if.clk);
         S_if.start = 0;
@@ -199,7 +196,7 @@ class SPI_driver extends uvm_driver #(SPI_seq_item);
         disable fork;
         
         @(posedge S_if.clk);
-        `uvm_info("DRV", $sformatf("Completed[%0d]: rx=0x%02d", transaction_count, S_if.rx_data), UVM_NONE);
+        // `uvm_info("DRV", $sformatf("Completed[%0d]: rx=0x%02d", transaction_count, S_if.rx_data), UVM_NONE);
     endtask
 endclass //SPI_driver extends uvm_driver #(SPI_seq_item)
 
@@ -238,7 +235,7 @@ class SPI_monitor extends uvm_monitor;
                 SPI_item.start = S_if.start;
                 SPI_item.done = S_if.done;
                 SPI_item.SS = S_if.SS;
-                `uvm_info("MON", $sformatf("sampled tx:0x%02x, rx:0x%02x, done:%0d", 
+                `uvm_info("MON", $sformatf("sampled tx:%0d, rx:%0d, done:%0d", 
                         SPI_item.tx_data, SPI_item.rx_data, SPI_item.done), UVM_NONE);
 
                 send.write(SPI_item);
@@ -270,9 +267,9 @@ class SPI_scoreboard extends uvm_scoreboard;
         // SPI_item.print(uvm_default_line_printer);
 
         if (SPI_item.rx_data == SPI_item.tx_data) begin
-           `uvm_info("SCO", $sformatf("*** TEST PASSED ***, tx_data:%0d, rx_data:%0d", item.tx_data, item.rx_data), UVM_NONE); 
+           `uvm_info("SCO", $sformatf("*** TEST PASSED ***"), UVM_NONE); 
         end else begin
-            `uvm_error("SCO", $sformatf("*** TEST FAILED ***, tx_data:%0d, rx_data:%0d", item.tx_data, item.rx_data));
+            `uvm_error("SCO", $sformatf("*** TEST FAILED ***"));
         end
         
     endfunction
@@ -378,8 +375,8 @@ module tb_SPI ();
     always #5 S_if.clk = ~S_if.clk;
 
     initial begin
-        // $fsdbDumpvars(0);
-        // $fsdbDumpfile("wave.fsdb");
+        $fsdbDumpvars(0);
+        $fsdbDumpfile("wave.fsdb");
         S_if.clk = 0;
 
         // SPI_test = new("TEST", null);
