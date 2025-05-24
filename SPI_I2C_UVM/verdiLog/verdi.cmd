@@ -3,12 +3,12 @@ debImport "-dbdir" "./build/simv.daidir"
 debLoadSimResult /home/hedu22/dev/SPI_I2C_UVM/build/wave.fsdb
 wvCreateWindow
 verdiSetActWin -win $_nWave2
+verdiWindowResize -win $_Verdi_1 "830" "370" "900" "700"
 verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
-verdiSetActWin -dock widgetDock_<Inst._Tree>
 wvGetSignalOpen -win $_nWave2
 wvGetSignalSetScope -win $_nWave2 "/SPI_Slave"
 verdiSetActWin -win $_nWave2
-wvGetSignalSetScope -win $_nWave2 "/tb_SPI"
+wvGetSignalSetScope -win $_nWave2 "/tb_SPI/S_if"
 wvGetSignalSetScope -win $_nWave2 "/tb_SPI/dut"
 wvSetPosition -win $_nWave2 {("G1" 13)}
 wvSetPosition -win $_nWave2 {("G1" 13)}
@@ -57,33 +57,20 @@ wvSetPosition -win $_nWave2 {("G1" 13)}
 wvGetSignalClose -win $_nWave2
 wvZoomOut -win $_nWave2
 wvZoomOut -win $_nWave2
-wvSelectSignal -win $_nWave2 {( "G1" 1 )} 
+wvZoomOut -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
 wvSelectSignal -win $_nWave2 {( "G1" 1 2 3 )} 
-wvSetPosition -win $_nWave2 {("G1" 6)}
-wvSetPosition -win $_nWave2 {("G1" 8)}
-wvSetPosition -win $_nWave2 {("G1" 9)}
 wvSetPosition -win $_nWave2 {("G1" 10)}
 wvSetPosition -win $_nWave2 {("G1" 11)}
 wvSetPosition -win $_nWave2 {("G1" 10)}
 wvMoveSelected -win $_nWave2
 wvSetPosition -win $_nWave2 {("G1" 10)}
-wvSetCursor -win $_nWave2 4472055.791020 -snap {("G2" 0)}
-wvSelectGroup -win $_nWave2 {G2}
-wvSetCursor -win $_nWave2 2355510.302140 -snap {("G2" 0)}
-wvSetCursor -win $_nWave2 25739924.171213 -snap {("G2" 0)}
-wvZoomIn -win $_nWave2
-wvZoomIn -win $_nWave2
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvSetCursor -win $_nWave2 36442556.520143 -snap {("G2" 0)}
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomIn -win $_nWave2
-wvZoomIn -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomOut -win $_nWave2
-wvZoomIn -win $_nWave2
+wvSetCursor -win $_nWave2 3727245.069240 -snap {("G2" 0)}

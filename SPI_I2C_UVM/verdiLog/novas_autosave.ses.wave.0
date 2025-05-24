@@ -1,0 +1,86 @@
+Magic 271485
+Revision Verdi_W-2024.09-SP2
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 25 2560 594 100 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/hedu22/dev/SPI_I2C_UVM/build/wave.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 673233574307.929688 673238710692.070312
+cursor 478802830000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 13
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/hedu22/dev/SPI_I2C_UVM/build/wave.fsdb"
+addSignal -h 15 /tb_SPI/dut/MISO
+addSignal -h 15 -holdScope MOSI
+addSignal -h 15 -holdScope SCLK
+addSignal -h 15 -holdScope SS
+addSignal -h 15 -holdScope clk
+addSignal -h 15 -holdScope cpha
+addSignal -h 15 -holdScope cpol
+addSignal -h 15 -holdScope done
+addSignal -h 15 -holdScope ready
+addSignal -h 15 -holdScope reset
+addSignal -h 15 -UNSIGNED -HEX -holdScope rx_data[7:0]
+addSignal -h 15 -holdScope start
+addSignal -h 15 -UNSIGNED -HEX -holdScope tx_data[7:0]
+addGroup "G2"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/home/hedu22/dev/SPI_I2C_UVM/build/wave.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/SPI_Slave"
+"/tb_SPI"
+"/tb_SPI/dut"
+
+SCOPE_LIST_BEGIN
+"/SPI_Slave"
+"/tb_SPI/dut"
+"/tb_SPI"
+"/tb_SPI/dut/U_SPI_Master"
+"/tb_SPI/S_if"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+
