@@ -8,9 +8,9 @@ used block: 7 [memory(7) file(0)]
 overhead: (9541) bytes for (7) blocks [Average: (1363) bytes/block]
 
 write  => 0(times) 0K(bytes) [0K bytes to file]
-read   => 1(times) 31K(bytes) [5K bytes compressed data from file]
-access => 52527(times) 418M(bytes)
-          [hit ratio: 99.9981%]
+read   => 1(times) 33K(bytes) [5K bytes compressed data from file]
+access => 42646(times) 341M(bytes)
+          [hit ratio: 99.9977%]
 
 time: write(0) read(0)  unit: second
 
@@ -26,17 +26,17 @@ closeHead: (1)
 closeTail: (2)
 openCnt: (2)
 fid(3): fd(0) fileName(/home/hedu22/dev/SPI_I2C_UVM/build/simv.daidir/kdb.elab++/work.lib++/uvm_custom_install_verdi_recorder.sv.tdc)
-	size(16109) lastModTime(1748089603) curModTime(1748089603)
+	size(16101) lastModTime(1748104259) curModTime(1748104259)
 	mode(rb)	hot(0) cool(0) pos(0)
-fid(2): fd(22) fileName(/home/hedu22/dev/SPI_I2C_UVM/verdiLog/_swap_0001#261616969#1240526)
-	size(0) lastModTime(0) curModTime(1748089628)
+fid(2): fd(22) fileName(/home/hedu22/dev/SPI_I2C_UVM/verdiLog/_swap_0001#261616969#1469687)
+	size(0) lastModTime(0) curModTime(1748104279)
 	mode(w+b)	hot(0) cool(1) pos(0)
 fid(1): fd(1073741824) fileName(/home/hedu22/dev/SPI_I2C_UVM/build/simv.daidir/kdb.elab++/work.lib++/tb_SPI.sv.tdc)
-	size(41702) lastModTime(1748089603) curModTime(1748089603)
+	size(41840) lastModTime(1748104259) curModTime(1748104259)
 	mode(rb)	hot(2) cool(0) pos(0)
 fid(0): fd(0) fileName(NULL)
 	mode(NULL)	hot(0) cool(0) pos(0)
 ==================================================
-mySelf(0x1f32b480) pre(0x1e2e67d0) next((nil))
+mySelf(0x207e4ce0) pre(0x213a05c0) next((nil))
 version(200506)
 date(Dec  3 2024 20:20:45)

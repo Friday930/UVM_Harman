@@ -60,8 +60,7 @@ module SPI_Slave_Intf (
         if (reset) begin
             sclk_sync0 <= 0;
             sclk_sync1 <= 0;
-        end
-        begin
+        end else begin
             sclk_sync0 <= SCLK;
             sclk_sync1 <= sclk_sync0;
         end
@@ -136,7 +135,21 @@ module SPI_Slave_Intf (
     reg so_done_reg, so_done_next;
 
     assign so_done = so_done_reg;
-    assign MISO = ~SS ? so_data_reg[7] : 1'bz;
+
+    // 안되면 지우기 시작
+    reg [7:0] immediate_output;
+
+    always @(*) begin
+        if (!SS) begin
+            immediate_output = so_data;  // SS 활성화 즉시 so_data 반영
+        end else begin
+            immediate_output = 8'h00;
+        end
+    end
+
+    assign MISO = ~SS ? immediate_output[7] : 1'bz;
+    // 안되면 지우기 끝
+    // assign MISO = ~SS ? so_data_reg[7] : 1'bz;
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin
@@ -164,7 +177,9 @@ module SPI_Slave_Intf (
                     so_state_next = SO_PHASE;
                     so_bit_cnt_next = 0;
                     so_data_next = so_data;
-                end
+                end else if (!SS) begin
+                    so_data_next = so_data;
+                end // erase else if
             end
             SO_PHASE: begin
                 if (!SS) begin
@@ -223,7 +238,9 @@ module SPI_Slave_Reg (
     always @(*) begin
         state_next       = state;
         addr_next        = addr_reg;
-        so_start_next    = so_start_reg;
+        // so_start_next    = so_start_reg;
+        // so_data          = 0; -> 원본
+        so_start_next    = 1'b0;
         so_data          = 0;
         clk_counter_next = clk_counter_reg;
         case (state)
@@ -231,10 +248,16 @@ module SPI_Slave_Reg (
                 so_start_next = 1'b0;
                 if (!ss_n) begin
                     state_next = ADDR_PHASE;
+                    // two lines erase
+                    // so_start_next = 1'b1;
+                    // so_data = 8'h55;
                 end
             end
+         
             ADDR_PHASE: begin
                 if (!ss_n) begin
+                    so_start_next = 1'b1;
+                    so_data = si_data; // two lines erase
                     if (si_done) begin
                         addr_next = si_data[1:0];
                         if (si_data[7]) begin
@@ -249,6 +272,8 @@ module SPI_Slave_Reg (
             end
             WRITE_PHASE: begin
                 if (!ss_n) begin
+                    so_start_next = 1'b1;
+                    so_data = si_data; // two lines erase
                     if (si_done) begin
                         slv_reg[addr_reg] = si_data;
                         if (addr_reg == 3) begin
@@ -262,6 +287,9 @@ module SPI_Slave_Reg (
                 end
             end
             READ_DEALY: begin
+                // two lines erase
+                so_start_next = 1'b1;
+                so_data = slv_reg[addr_reg];
                 if (clk_counter_reg == 49) begin
                     state_next = READ_PHASE;
                     clk_counter_next = 0;

@@ -26,15 +26,15 @@ fdb_campaign =
 fdb_tool = 
 [hb]
 postSimFile = /home/hedu22/dev/SPI_I2C_UVM/build/wave.fsdb
-syncTime = 56475000
-viewport = 8 31 2560 1369 0 0 569 2558
+syncTime = 0
+viewport = 8 31 1920 1009 0 0 398 1918
 activeNode = "tb_SPI"
 activeScope = "tb_SPI"
 activeFile = "./tb/tb_SPI.sv"
 interactiveMode = False
 viewType = Source
 simulatorMode = False
-sourceBeginLine = 353
+sourceBeginLine = 358
 baMode = False
 srcLineNum = True
 AutoWrap = True
@@ -52,7 +52,7 @@ leadingZero = False
 signalPane = False
 SourceVerticalScrollLines = 5
 Scope1 = "tb_SPI"
-multipleSelection = 1 353 2 0 0
+multipleSelection = 1 358 2 0 0
 sdfCheckUndef = FALSE
 simFlow = FALSE
 [hb.design]
@@ -61,13 +61,13 @@ invokeDir = /home/hedu22/dev/SPI_I2C_UVM
 [hb.sourceTab.1]
 scope = tb_SPI
 File = /home/hedu22/dev/SPI_I2C_UVM/tb/tb_SPI.sv
-Line = 354
+Line = 359
 [nMemoryManager]
 WaveformFile = /home/hedu22/dev/SPI_I2C_UVM/build/wave.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 25 2560 596 100 65
+viewPort = 0 25 1920 425 123 65
 primaryWindow = TRUE
 SessionFile = /home/hedu22/dev/SPI_I2C_UVM/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE

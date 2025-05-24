@@ -159,7 +159,7 @@ Limit information:
 cputime		unlimited
 filesize		unlimited
 datasize		unlimited
-stacksize		8309 kbytes
+stacksize		8305 kbytes
 coredumpsize		0 kbytes
 memoryuse		unlimited
 vmemoryuse		unlimited
@@ -170,7 +170,7 @@ maxproc		4126066
 (Special)Runtime environment variables:
 
 Runtime environment variables:
-SSH_TTY=/dev/pts/14
+SSH_TTY=/dev/pts/25
 FM_HOME=/tools/synopsys/fm/W-2024.09-SP4
 BASH_FUNC_scl%%=() {  if [ "$1" = "load" -o "$1" = "unload" ]; then
  eval "module $@";
@@ -237,32 +237,32 @@ PATH=.:/sbin:/bin:/usr/bin:/usr/sbin:/usr/include:/lib:/lib64:/usr/lib:/usr/lib6
 MODULESHOME=/usr/share/Modules
 MOTD_SHOWN=pam
 LOADEDMODULES=
-SSH_CLIENT=61.108.38.194 53980 22
+SSH_CLIENT=61.108.38.194 54683 22
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.m4a=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.oga=01;36:*.opus=01;36:*.spx=01;36:*.xspf=01;36:
 LOGNAME=hedu22
 HISTCONTROL=ignoredups
-DISPLAY=localhost:12.0
+DISPLAY=localhost:15.0
 USER=hedu22
 VCS_HOME=/tools/synopsys/vcs/W-2024.09-SP1
 which_declare=declare -f
 SYNOPSYS=/tools/synopsys
 _=/bin/make
-MAKE_TERMOUT=/dev/pts/14
+MAKE_TERMOUT=/dev/pts/25
 XDG_RUNTIME_DIR=/run/user/1135
 SNPSLMD_LICENSE_FILE=27020@222.234.38.90
 S_COLORS=auto
-MAKE_TERMERR=/dev/pts/14
+MAKE_TERMERR=/dev/pts/25
 XDG_SESSION_CLASS=user
 HOME=/home/hedu22
 TERM=xterm
-XDG_SESSION_ID=2909
+XDG_SESSION_ID=2935
 ICC2_HOME=/tools/synopsys/icc2/W-2024.09-SP1
 BASH_FUNC__module_raw%%=() {  eval "$(/usr/bin/tclsh '/usr/share/Modules/libexec/modulecmd.tcl' bash "$@")";
  _mlstatus=$?;
  return $_mlstatus
 }
 __MODULES_SHARE_MANPATH=:1
-SSH_CONNECTION=61.108.38.194 53980 222.234.38.90 22
+SSH_CONNECTION=61.108.38.194 54683 222.234.38.90 22
 MAKELEVEL=1
 VCS_PATHMAP_PRELOAD_DONE=1
 VCS_STACK_EXEC=true
@@ -278,8 +278,8 @@ argv[2]=-l
 argv[3]=././build/simv.log
 argv[4]=+fsdbfile+./build/wave.fsdb
 245 profile - 100
-          CPU/Mem usage: 0.030 sys,  0.150 user,  239.17M mem
-246 Elapsed time:    0:00:00    Sat May 24 21:30:37 2025
+          CPU/Mem usage: 0.020 sys,  0.160 user,  239.19M mem
+246 Elapsed time:    0:00:00    Sun May 25 01:31:03 2025
 247 User CPU time used: 0 seconds
 248 System CPU time used: 0 seconds
 249 pliAppInit
@@ -314,33 +314,60 @@ argv[4]=+fsdbfile+./build/wave.fsdb
 278 *Verdi* : Begin traversing the scopes, layer (0).
 279 *Verdi* : End of traversing.
 280 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.030 sys,  0.180 user,  339.05M mem
-                   incr: 0.000 sys,  0.030 user,  10.03M mem
-                   accu: 0.000 sys,  0.030 user,  10.03M mem
-              accu incr: 0.000 sys,  0.030 user,  10.03M mem
+          CPU/Mem usage: 0.030 sys,  0.190 user,  339.07M mem
+                   incr: 0.010 sys,  0.030 user,  10.03M mem
+                   accu: 0.010 sys,  0.030 user,  10.03M mem
+              accu incr: 0.010 sys,  0.030 user,  10.03M mem
 
-          Count usage: 134 var,  102 idcode,  79 callback
-                 incr: 134 var,  102 idcode,  79 callback
-                 accu: 134 var,  102 idcode,  79 callback
-            accu incr: 134 var,  102 idcode,  79 callback
+          Count usage: 135 var,  103 idcode,  80 callback
+                 incr: 135 var,  103 idcode,  80 callback
+                 accu: 135 var,  103 idcode,  80 callback
+            accu incr: 135 var,  103 idcode,  80 callback
 281 Idcode  0 - bc1:0  mda:0
-282 Elapsed time:    0:00:00    Sat May 24 21:30:37 2025
+282 Elapsed time:    0:00:00    Sun May 25 01:31:03 2025
 283 User CPU time used: 0 seconds
 284 System CPU time used: 0 seconds
 285 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.030 sys,  0.180 user,  339.05M mem
+          CPU/Mem usage: 0.030 sys,  0.190 user,  339.07M mem
                    incr: 0.000 sys,  0.000 user,  0.00M mem
-                   accu: 0.000 sys,  0.030 user,  10.03M mem
+                   accu: 0.010 sys,  0.030 user,  10.03M mem
               accu incr: 0.000 sys,  0.000 user,  0.00M mem
 
-          Count usage: 134 var,  102 idcode,  79 callback
+          Count usage: 135 var,  103 idcode,  80 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 134 var,  102 idcode,  79 callback
+                 accu: 135 var,  103 idcode,  80 callback
             accu incr: 0 var,  0 idcode,  0 callback
 286 Idcode  0 - bc1:0  mda:0
-287 Elapsed time:    0:00:00    Sat May 24 21:30:37 2025
+287 Elapsed time:    0:00:00    Sun May 25 01:31:03 2025
 288 User CPU time used: 0 seconds
 289 System CPU time used: 0 seconds
 290 sps_call_fsdbDumpfile_main at 0 : ./tb/tb_SPI.sv(384)
 291 argv[0]: (wave.fsdb)
 292 *Verdi* WARNING: Env/runtime option has specified fsdbfile name as "./build/wave.fsdb". Fsdbfile name in task "wave.fsdb" is ignored.
+293 End of simulation at 112665000
+294 Memory usage: 340.431 M
+295 Maximum resident set size: 163 MB
+296 Hard page faults: 0
+297 Soft page faults: 14690
+298 Elapsed time:    0:00:01    Sun May 25 01:31:04 2025
+299 User CPU time used: 0 seconds
+300 System CPU time used: 0 seconds
+301 Begin FSDB profile info:
+302 FSDB Writer : bc1(23332) bcn(12324) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.002404) io wait(0.000000) theadpool wait(0.000000)
+FSDB Writer cpu time : MT Compression : 0
+303 End FSDB profile info
+304 FSDB closed. Name: ./build/wave.fsdb Size: 18376
+305 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
+306                      - BlockUsed:1 Acquire:0 BufferUsed:824916
+307                      - Flush:3 Expand:0 ProducerWait:0 ConsumerWait:0
+308                      - MainProducerTime:0.249289505 TotalConsumerTime:0.000000000
+309                      - ElapsedTime:0.066945000
+310 Producer   0 profile - BlockUsed:2 Acquire:0 BufferUsed:824916
+311 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
+312                      - BlockUsed:2 Acquire:0 BufferUsed:824916
+313 SimExit
+314 Elapsed time:    0:00:01    Sun May 25 01:31:04 2025
+315 User CPU time used: 0 seconds
+316 System CPU time used: 0 seconds
+317 Sim process exit

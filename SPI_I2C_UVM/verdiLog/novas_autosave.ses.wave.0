@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi_W-2024.09-SP2
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 2560 596 100 65
+viewPort 0 25 1920 425 123 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,16 +16,16 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 130012250.000000
-cursor 56475000.000000
+zoom 4506600.000000 94638600.000000
+cursor 0.000000
 marker 0.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
 ; visible top row signal index
-top 0
+top 1
 ; marker line index
-markerPos 10
+markerPos 13
 
 ; event list
 ; addEvent event_name event_expression
@@ -47,19 +47,19 @@ curSTATUS ByChange
 
 addGroup "G1"
 activeDirFile "" "/home/hedu22/dev/SPI_I2C_UVM/build/wave.fsdb"
-addSignal -h 15 /tb_SPI/dut/SS
-addSignal -h 15 -holdScope clk
-addSignal -h 15 -holdScope cpha
-addSignal -h 15 -holdScope cpol
-addSignal -h 15 -holdScope done
-addSignal -h 15 -holdScope ready
-addSignal -h 15 -holdScope reset
-addSignal -h 15 -holdScope MISO
-addSignal -h 15 -holdScope MOSI
-addSignal -h 15 -holdScope SCLK
-addSignal -h 15 -UNSIGNED -HEX -holdScope rx_data[7:0]
-addSignal -h 15 -holdScope start
-addSignal -h 15 -UNSIGNED -HEX -holdScope tx_data[7:0]
+addSignal -h 16 /tb_SPI/dut/MISO
+addSignal -h 16 -holdScope MOSI
+addSignal -h 16 -holdScope SCLK
+addSignal -h 16 -holdScope SS
+addSignal -h 16 -holdScope clk
+addSignal -h 16 -holdScope cpha
+addSignal -h 16 -holdScope cpol
+addSignal -h 16 -holdScope done
+addSignal -h 16 -holdScope ready
+addSignal -h 16 -holdScope reset
+addSignal -h 16 -UNSIGNED -HEX -holdScope rx_data[7:0]
+addSignal -h 16 -holdScope start
+addSignal -h 16 -UNSIGNED -HEX -holdScope tx_data[7:0]
 addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status

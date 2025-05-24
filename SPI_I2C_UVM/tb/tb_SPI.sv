@@ -162,7 +162,7 @@ class SPI_driver extends uvm_driver #(SPI_seq_item);
             seq_item_port.item_done();
             
             // 10개 트랜잭션 완료 후 종료
-            if (transaction_count >= 10) begin
+            if (transaction_count >= 20) begin
                 S_if.SS = 1;  // 최종 비활성화
                 // `uvm_info("DRV", "SS = 1 (End of scenario)", UVM_NONE);
                 break;

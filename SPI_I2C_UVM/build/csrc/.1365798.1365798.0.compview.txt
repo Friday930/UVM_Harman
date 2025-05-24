@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1748098702.454961777, "rt":5.52, "ut":5.66, "st":0.26}}
+{"vcselab":{"timestamp_begin":1748098708.020631669, "rt":0.23, "ut":0.14, "st":0.03}}
+{"link":{"timestamp_begin":1748098708.290357844, "rt":0.28, "ut":0.20, "st":0.09}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1748098702.098472419}
+{"VCS_COMP_START_TIME": 1748098702.098472419}
+{"VCS_COMP_END_TIME": 1748098708.658065798}
+{"VCS_USER_OPTIONS": "-full64 -sverilog -ntb_opts uvm-1.2 -debug_access+all -kdb -timescale=1ns/100ps -Mdir=./build/csrc -o ./build/simv -l ./build/comp.log ./rtl/SPI_Master.v ./rtl/SPI_Slave.v ./rtl/SPI_top.v ./tb/tb_SPI.sv"}
+{"vcs1": {"peak_mem": 453760}}
+{"vcselab": {"peak_mem": 161892}}

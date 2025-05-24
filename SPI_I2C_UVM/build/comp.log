@@ -2,7 +2,7 @@ Command: vcs -full64 -sverilog -ntb_opts uvm-1.2 -debug_access+all -kdb -timesca
 -Mdir=./build/csrc -o ./build/simv -l ./build/comp.log ./rtl/SPI_Master.v ./rtl/SPI_Slave.v \
 ./rtl/SPI_top.v ./tb/tb_SPI.sv
                          Chronologic VCS (TM)
-       Version W-2024.09-SP1_Full64 -- Sat May 24 21:30:29 2025
+       Version W-2024.09-SP1_Full64 -- Sun May 25 01:30:58 2025
 
                     Copyright (c) 1991 - 2024 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -367,13 +367,10 @@ Top Level Modules:
 TimeScale is 1 ns / 1 ps
 Starting vcs inline pass...
 9 modules and 0 UDP read.
-recompiling package vcs_paramclassrepository
-recompiling package uvm_pkg
-recompiling module uvm_custom_install_recording
 recompiling module uvm_custom_install_verdi_recording
-recompiling module tb_SPI
-5 of 9 modules done
-	However, due to incremental compilation, only 5 modules need to be compiled. 
+recompiling module SPI_top
+Both modules done.
+	However, due to incremental compilation, only 2 modules need to be compiled. 
 make[1]: Entering directory '/home/hedu22/dev/SPI_I2C_UVM/build/csrc'
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 if [ -x /home/hedu22/dev/SPI_I2C_UVM/./build/simv ]; then chmod a-x /home/hedu22/dev/SPI_I2C_UVM/./build/simv; \
@@ -381,7 +378,7 @@ fi
 g++  -o /home/hedu22/dev/SPI_I2C_UVM/./build/simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir \
 -Wl,-rpath=./simv.daidir -Wl,-rpath=/tools/synopsys/vcs/W-2024.09-SP1/linux64/lib \
 -L/tools/synopsys/vcs/W-2024.09-SP1/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1 \
-uvm_dpi.o uvm_verdi_dpi.o   objs/amcQw_d.o  _1246847_archive_1.so _prev_archive_1.so \
+uvm_dpi.o uvm_verdi_dpi.o   objs/amcQw_d.o  _1469227_archive_1.so _prev_archive_1.so \
 SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
 -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /tools/synopsys/vcs/W-2024.09-SP1/linux64/lib/vcs_tls.o \
 -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive      ./../simv.daidir/vc_hdrs.o \
@@ -390,5 +387,5 @@ _vcs_pli_stub_.o   /tools/synopsys/vcs/W-2024.09-SP1/linux64/lib/vcs_save_restor
 -ldl 
 /home/hedu22/dev/SPI_I2C_UVM/./build/simv up to date
 make[1]: Leaving directory '/home/hedu22/dev/SPI_I2C_UVM/build/csrc'
-CPU time: 7.457 seconds to compile + .191 seconds to elab + .340 seconds to link
+CPU time: 4.850 seconds to compile + .193 seconds to elab + .338 seconds to link
 Verdi KDB elaboration done and the database successfully generated

@@ -231,7 +231,7 @@ SyncBrowserDir = TRUE
 FindBarVisible = 
 ColorTheme = classic
 version = Verdi_W-2024.09-SP2
-recent_commands_nWave = getSignal,editCut,zoomOut,zoomIn,openFile
+recent_commands_nWave = getSignal,zoomIn,zoomOut,editCut,openFile
 prevColorTheme = classic
 SignalCaseInSensitive = FALSE
 [GlobalProp]
@@ -382,10 +382,11 @@ saveWaveformStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
-QwWarnMsgDlg = 970,555,600,250
 openFileDlg = 979,478,602,483
-qWaveSignalDialog = 888,476,800,479
-QwUserAskDlg = 1116,587,324,125
+tipViewerDlg = 751,371,398,259
+QwWarnMsgDlg = 970,555,600,250
+qWaveSignalDialog = 568,296,800,479
+QwUserAskDlg = 796,407,324,125
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -588,7 +589,7 @@ pdmlMacro = ID_BLACK
 font = COURIER12
 annotFont = FIXED12
 [Text.1]
-viewport = 8 31 2560 1369 45
+viewport = 8 31 1920 1009 45
 [TextPrinter]
 Orientation = Landscape
 Indicator = FALSE
@@ -679,125 +680,55 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
-isHidden = TRUE
+name = "Message"
+width = 60
+visualIndex = 5
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = "Type"
 width = 60
 visualIndex = 4
-isHidden = TRUE
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
+name = "Code"
+width = 60
+visualIndex = 3
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = "Time"
 width = 60
 visualIndex = 0
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
-name = "Message"
-width = 2000
-visualIndex = 5
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = "Block's First Line"
+width = 60
+visualIndex = 1
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
 name = "Severity"
 width = 60
 visualIndex = 2
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
-name = "Code"
-width = 60
-visualIndex = 3
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
 [VIA.ruleHistory]
 /tools/synopsys/verdi/W-2024.09-SP2/share/VIA/Apps/PredefinedRules/Misc/Onesearch_rule.rc = 
-[Vi]
-ViFont = "Clean 14"
-ViBG = white
-ViFG = black
 [Wave]
-signalSpacing = 5
-digitalSignalHeight = 15
-analogSignalHeight = 98
-commentSignalHeight = 98
-minCompErrWidth = 4
-DragZoomTolerance = 4
-WaveMaxPoint = 512
-openDumpFilter = *.fsdb;*.vf;*.jf;*.zwd*
-DumpFileFilter = *.vcd
-RestoreSignalFilter = *.rc
-SaveSignalFilter = *.rc
-AddAliasFilter = *.alias
-CompareSignalFilter = *.err
-ConvertFFFilter = *.vcd;*.out;*.tr0;*.xp;*.raw;*.wfm
-Scroll_Ratio = 1.000000
-SigGroupRuleFile = 
-hierarchyName = FALSE
-snap = TRUE
-displayLeadingZero = FALSE
-displayCursorMarker = FALSE
-restoreFromActiveFile = TRUE
-anaAuto100VertFit = FALSE
-centerCursor = FALSE
-InOutSignal = FALSE
-NetRegisterSignal = FALSE
-VerilogVHDLSignal = FALSE
-LabelMarker = TRUE
-ResolveSymbolicLink = TRUE
-TipInSignalWin = FALSE
-TipInCurveWin = FALSE
-DisplayLSBsFirst = FALSE
-ModuleName = TRUE
-TransitionMode = TRUE
-SchemaX = FALSE
-Hilight = TRUE
-UseBeforeValue = FALSE
-DisplayFileName = FALSE
-DisplayValueSpace = TRUE
-ReloadActiveFileOnly = FALSE
-NormalizeEVCD = FALSE
-OverwriteAliasWithRC = TRUE
-vhdlVariableCalculate = TRUE
-signal_vertical_scroll_bar = TRUE
-waveform_vertical_scroll_bar = TRUE
-ConvertAttr1 = -inc FALSE
-ConvertAttr2 = -hier FALSE
-ConvertAttr3 = -ucase FALSE
-ConvertAttr4 = -lcase FALSE
-ConvertAttr5 = -org FALSE
-ConvertAttr7 = -deli .
-ConvertAttr8 = -hier_scope FALSE
-ConvertAttr9 = -inst_array FALSE
-ConvertAttr10 = -vhdlnaming FALSE
-ConvertAttr11 = -orgScope FALSE
-analogFmtPrecision = Automatic 2
-confirmOverwrite = TRUE
-confirmGetAll = TRUE
-hspiceIncOpenMode = TRUE
-pcSelectMode = TRUE
-hierarchyDelimiter = /
-value_window_aligment = Right
-signal_window_alignment = Auto
-ShowDeltaTime = TRUE
-WaveExtendLastTick = TRUE
-displayMessageLabelOnly = TRUE
-AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 888 476 800 479 220 387 484 187
-viewPort = 0 25 2560 596 100 65
+getSignalForm = 568 296 800 479 220 387 484 187
+viewPort = 0 25 1920 425 123 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -959,7 +890,7 @@ confirmExit = TRUE
 printTimeRange = TRUE 0.000000 0.000000 0.000000
 printPageRange = TRUE 1 1
 printOption = 0
-printBasic = 1 0 0 FALSE FALSE
+printBasic = 1 0 1 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
@@ -996,71 +927,6 @@ maskFsaCoreRule = TRUE
 maskFsaSfsmRule = TRUE
 maskFsaEcrRule = TRUE
 maskTPropagation = TRUE
-[cov_hier_name_column]
-justify = TRUE
-[coverageColors]
-sou_uncov = TRUE
-sou_pc = TRUE
-sou_cov = TRUE
-sou_exuncov = TRUE
-sou_excov = TRUE
-sou_unreach = TRUE
-sou_unreachcon = TRUE
-sou_incon = TRUE
-sou_uncov_coi = TRUE
-sou_non_active = TRUE
-sou_non_fc = TRUE
-sou_fillColor_uncov = red
-sou_fillColor_pc = yellow
-fca_sou_fillColor_pc = greenyellow
-sou_fillColor_cov = green3
-sou_fillColor_exuncov = darkgray
-sou_fillColor_excov = #3C9371
-sou_fillColor_unreach = darkcyan
-sou_fillColor_unreachcon = red
-sou_fillColor_incon = yellow
-sou_fillColor_uncov_coi = violet
-sou_fillColor_non_active = goldenrod
-sou_fillColor_non_fc = orange
-numberOfBins = 6
-rangeMin_0 = 0
-rangeMax_0 = 20
-fillColor_0 = #FF6464
-rangeMin_1 = 20
-rangeMax_1 = 40
-fillColor_1 = #FF9999
-rangeMin_2 = 40
-rangeMax_2 = 60
-fillColor_2 = #FF8040
-rangeMin_3 = 60
-rangeMax_3 = 80
-fillColor_3 = #FFFF99
-rangeMin_4 = 80
-rangeMax_4 = 100
-fillColor_4 = #99FF99
-rangeMin_5 = 100
-rangeMax_5 = 100
-fillColor_5 = #64FF64
-[coveragesetting]
-geninfodumping = 0
-geninfoColumnShown = 0
-assertTopoMode = FALSE
-urgAppendOptions = 
-group_instance_new_format_name = TRUE
-showvalue = FALSE
-computeGroupsScoreByRatio = FALSE
-computeGroupsScoreByInst = FALSE
-showConditionId = FALSE
-showfullhier = FALSE
-nameLeftAlignment = TRUE
-showAllInfoInTooltips = FALSE
-showModuleNameInSummaryHierarchy = false
-copyItemHvpName = TRUE
-ignoreGroupWeight = FALSE
-absTestName = FALSE
-HvpMergeTool = 
-ShowMergeMenuItem = FALSE
-fsmScoreMode = Transition
 [eco]
 NameRule = 
 IsFreezeSilicon = FALSE
@@ -1101,16 +967,7 @@ Port/NetIsUnique = TRUE
 SerialNet = 0
 SerialPort = 0
 SerialInst = 0
-[finsim]
-TPLanguage = Verilog
-TPName = Super-FinSim
-TPPath = TOP.sim
-TPOption = 
-AddImportArgument = FALSE
-LineBreakWithScope = FALSE
-StopAfterCompileOption = -i
 [fusa]
-tooltip_summary = TRUE
 Name_Show = TRUE
 Coverage_Show = TRUE
 Test_Cov_Show = TRUE
@@ -1119,54 +976,6 @@ Undetected_Show = TRUE
 Num_of_Fault_Show = TRUE
 Num_of_Displayed_Fault_Show = FALSE
 Num_of_Inst_Show = TRUE
-[hvpsetting]
-importExcelXMLOptions = 
-use_test_loca_as_source = FALSE
-autoTurnOffHideMeetGoalInit = FALSE
-autoTurnOffHideMeetGoal = TRUE
-autoTurnOffModifierInit = FALSE
-autoTurnOffModifier = TRUE
-enableNumbering = TRUE
-autoSaveCheck = TRUE
-autoSaveTime = 5
-ShowMissingScore = TRUE
-enableFeatureId = FALSE
-enable_HVP_FEAT_ID = FALSE
-enableMeasureConcealment = FALSE
-HvpCloneHierShowMsgAgain = 1
-HvpCloneHierType = tree
-HvpCloneHierMetrics = Line,Cond,FSM,Toggle,Branch,Assert
-autoRecalPlanAfterLoadingCovDBUserDataPlan = false
-warnMeAutoRecalPlanAfterLoadingCovDBUserDataPlan = true
-autoRecalExclWithPlan = false
-warnMeAutoRecalExclWithPlan = true
-autoRecalPlanWithExcl = false
-warnMeAutoRecalPlanWithExcl = true
-warnPopupWarnWhenMultiFilters = true
-warnPopupWarnIfHvpReadOnly = true
-unmappedObjsReportLevel = def_var_inst
-unmappedObjsReportInst = true
-unmappedObjsNumOfObjs = High
-[ikos]
-TPLanguage = VHDL
-TPName = Voyager
-TPPath = vsh
-TPOption = -X
-AddImportArgument = FALSE
-LineBreakWithScope = FALSE
-StopAfterCompileOption = -i
-[imp]
-options = NULL
-libPath = NULL
-libDir = NULL
-[nCompare]
-ErrorViewport = 80 180 800 550
-EditorViewport = 409 287 676 475
-EditorHeightWidth = 802 380
-WaveCommand = "novas"
-WaveArgs = "-nWave"
-[nCompare.Wnd0]
-ViewByHier = FALSE
 [nMemory]
 dispMode = ADDR_HINT
 addrColWidth = 120
@@ -1176,136 +985,8 @@ wordsShownInOneRow = 8
 syncCursorTime = FALSE
 fixCellColumnWidth = FALSE
 font = Courier 12
-[nRegister]
-rectangle = 1
-line = 1
-ellipse = 1
-arrow = 1
-[planColors]
-plan_fillColor_inactive = lightgray
-plan_fillColor_warning = orange
-plan_fillColor_error = red
-plan_fillColor_invalid = #F0DCDB
-plan_fillColor_subplan = lightgray
 [rtla]
 RtlaDbPath = 
-[schematics]
-viewport = 178 262 638 516
-schBackgroundColor = black lineSolid
-schBackgroundColor_qt = #000000 qt_solidLine 1
-schBodyColor = ID_ORANGE6 lineSolid
-schBodyColor_qt = #ffb973 qt_solidLine 1
-schAsmBodyColor = ID_BLUE7 lineSolid
-schAsmBodyColor_qt = #a5a5ff qt_solidLine 1
-schPortColor = ID_ORANGE6 lineSolid
-schPortColor_qt = #ffb973 qt_solidLine 1
-schCellNameColor = ID_GRAY6 lineSolid
-schCellNameColor_qt = #e0e0e0 qt_solidLine 1
-schCLKNetColor = ID_RED6 lineSolid
-schCLKNetColor_qt = #ff7373 qt_solidLine 1
-schPWRNetColor = ID_RED4 lineSolid
-schPWRNetColor_qt = #be4242 qt_solidLine 1
-schGNDNetColor = ID_CYAN4 lineSolid
-schGNDNetColor_qt = #42bebe qt_solidLine 1
-schSIGNetColor = ID_GREEN8 lineSolid
-schSIGNetColor_qt = #cdffcd qt_solidLine 1
-schTraceColor = ID_YELLOW4 lineSolid
-schTraceColor_qt = #bebe42 qt_solidLine 2
-schBackAnnotateColor = white lineSolid
-schBackAnnotateColor_qt = #ffffff qt_solidLine 1
-schValue0 = ID_YELLOW4 lineSolid
-schValue0_qt = #bebe42 qt_solidLine 1
-schValue1 = ID_GREEN3 lineSolid
-schValue1_qt = #5ba55b qt_solidLine 1
-schValueX = ID_RED4 lineSolid
-schValueX_qt = #be4242 qt_solidLine 1
-schValueZ = ID_PURPLE8 lineSolid
-schValueZ_qt = #ffcdff qt_solidLine 1
-dimColor = ID_CYAN2 lineSolid
-dimColor_qt = #008080 qt_solidLine 1
-schPreSelColor = ID_GREEN4 lineDash
-schPreSelColor_qt = #42be42 qt_dashLine 2
-schBusNetColor = ID_GREEN8 lineSolid
-schBusNetColor_qt = #cdffcd qt_solidLine
-schGNDBusNetColor = ID_CYAN4 lineSolid
-schGNDBusNetColor_qt = #42bebe qt_solidLine
-schPWRBusNetColor = ID_RED4 lineSolid
-schPWRBusNetColor_qt = #be4242 qt_solidLine
-schCLKBusNetColor = ID_RED6 lineSolid
-schCLKBusNetColor_qt = #ff7373 qt_solidLine
-schEdgeSensitiveColor = ID_ORANGE6 lineSolid
-schEdgeSensitiveColor_qt = #ffb973 qt_solidLine
-schAnnotColor = ID_GRAY6 lineSolid
-schAnnotColor_qt = #e0e0e0 qt_solidLine
-schInstNameColor = ID_GRAY6 lineSolid
-schInstNameColor_qt = #e0e0e0 qt_solidLine
-schPortNameColor = ID_GRAY6 lineSolid
-schPortNameColor_qt = #e0e0e0 qt_solidLine
-schAsmLatchColor = ID_BLUE7 lineSolid
-schAsmLatchColor_qt = #a5a5ff qt_solidLine
-schAsmRegColor = ID_BLUE7 lineSolid
-schAsmRegColor_qt = #a5a5ff qt_solidLine
-schAsmTriColor = ID_BLUE7 lineSolid
-schAsmTriColor_qt = #a5a5ff qt_solidLine
-schFillBackgroundColor = ID_BLACK blank
-schFillBodyColor = ID_ORANGE6 blank
-schFillTriColor = ID_ORANGE6 blank
-schFillRegColor = ID_ORANGE6 blank
-schFillLatchColor = ID_ORANGE6 blank
-schFillAsmBodyColor = ID_BLUE7 blank
-schFillAsmTriColor = ID_BLUE7 dots
-schFillAsmRegColor = ID_BLUE7 slant_left
-schFillAsmLatchColor = ID_BLUE7 hZigZag
-schFillTipBackColor = ID_GRAY6 blank
-schFillFsmBlock = ID_BLUE7 blank
-schFillBlackBoxColor = ID_BLUE3 dots
-schFillCmtColor = ID_YELLOW4 fill_solid
-pre_select = True
-ShowPassThroughNet = False
-ComputedAnnotColor = ID_PURPLE5
-[schematics_print]
-Signature = FALSE
-DesignName = PCU
-DesignerName = bai
-SignatureLocation = LowerRight
-MultiPage = TRUE
-AutoSliver = FALSE
-[sourceColors]
-BackgroundActive = gray88
-BackgroundInactive = lightgray
-InactiveCode = dimgray
-Selection = darkblue
-Standard = black
-Keyword = blue
-Comment = gray25
-Number = black
-String = black
-Identifier = darkred
-Inline = green
-colorIdentifier = green
-Value = darkgreen
-MacroBackground = white
-Missing = #400040
-[specColors]
-top_plan_linked = #ADFFA6
-top_plan_ignore = #D3D3D3
-top_plan_todo = #EECBAD
-sub_plan_ignore = #919191
-sub_plan_todo = #EFAFAF
-sub_plan_linked = darkorange
-[spec_link_setting]
-use_spline = true
-goto_section = false
-exclude_ignore = true
-truncate_abstract = false
-abstract_length = 999
-compare_strategy = 2
-auto_apply_margin = FALSE
-margin_top = 0.80
-margin_bottom = 0.80
-margin_left = 0.50
-margin_right = 0.50
-margin_unit = inches
 [spiceDebug]
 ThroughNet = ID_YELLOW5
 InstrumentSig = ID_GREEN5
@@ -1316,41 +997,7 @@ HighlightThroughNet = TRUE
 HighlightInterfaceElement = TRUE
 HighlightRuntimeInterfaceElement = TRUE
 HighlightSameNet = TRUE
-[surefire]
-TPLanguage = Verilog
-TPName = SureFire
-TPPath = verilog
-TPOption = 
-AddImportArgument = TRUE
-LineBreakWithScope = TRUE
-StopAfterCompileOption = -tcl
-[turboSchema_Printer_Options]
-Orientation = Landscape
 [turbo_library]
 bdb_load_scope = 
-[vdCovFilteringSearchesStrings]
-keepLastUsedFiltersMaxNum = 10
-[verisity]
-TPLanguage = Verilog
-TPName = "Verisity SpeXsim"
-TPPath = vlg
-TPOption = 
-AddImportArgument = FALSE
-LineBreakWithScope = TRUE
-StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 25 2560 596 100 65
-[wave.1]
-viewPort = 127 219 960 332 100 65
-[wave.2]
-viewPort = 38 314 686 205 100 65
-[wave.3]
-viewPort = 63 63 700 400 65 41
-[wave.4]
-viewPort = 84 84 700 400 65 41
-[wave.5]
-viewPort = 92 105 700 400 65 41
-[wave.6]
-viewPort = 0 0 700 400 65 41
-[wave.7]
-viewPort = 21 21 700 400 65 41
+viewPort = 0 25 1920 425 123 65

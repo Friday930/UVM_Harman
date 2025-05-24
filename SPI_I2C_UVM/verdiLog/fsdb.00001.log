@@ -11,13 +11,13 @@ Async open disabled.
 [THREAD]Secondary thread count: 4
 [PERF]VC decompress count : 1
 [PERF]VCChain decompress count : 1
-[PERF]VC decompress count : 1
+[PERF]VC decompress count : 2
+[PERF]VCChain decompress count : 1
+[PERF]VC decompress count : 2
 [PERF]VCChain decompress count : 1
 [PERF]VC decompress count : 1
 [PERF]VCChain decompress count : 1
-[PERF]VC decompress count : 1
-[PERF]VCChain decompress count : 1
-[PERF]VC decompress count : 1
+[PERF]VC decompress count : 0
 [PERF]VCChain decompress count : 1
 [PERF]VC decompress count : 1
 [PERF]VCChain decompress count : 1
@@ -32,5 +32,5 @@ Async open disabled.
 [PERF]VC decompress count : 1
 [PERF]VCChain decompress count : 0
 [FSDBGate Info] start
-[FSDBGate Info] Total fhdb_compute_count = 38674
+[FSDBGate Info] Total fhdb_compute_count = 33790
 [FSDBGate Info] end
