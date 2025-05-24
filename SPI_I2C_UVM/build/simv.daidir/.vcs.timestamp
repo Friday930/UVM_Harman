@@ -680,7 +680,7 @@ which_declare=declare -f
 __MODULES_SHARE_MANPATH=:1
 __MODULES_LMINIT=module use --append /usr/share/Modules/modulefiles:module use --append /etc/modulefiles:module use --append /usr/share/modulefiles
 XDG_SESSION_TYPE=tty
-XDG_SESSION_ID=2867
+XDG_SESSION_ID=2909
 XDG_SESSION_CLASS=user
 XDG_RUNTIME_DIR=/run/user/1135
 XDG_DATA_DIRS=/home/hedu22/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
@@ -704,9 +704,9 @@ TOOL_HOME=/tools/synopsys/vcs/W-2024.09-SP1/linux64
 S_COLORS=auto
 SYN_HOME=/tools/synopsys/syn/V-2023.12-SP5-4
 SYNOPSYS=/tools/synopsys
-SSH_TTY=/dev/pts/1
-SSH_CONNECTION=61.108.38.194 53711 222.234.38.90 22
-SSH_CLIENT=61.108.38.194 53711 22
+SSH_TTY=/dev/pts/14
+SSH_CONNECTION=61.108.38.194 53980 222.234.38.90 22
+SSH_CLIENT=61.108.38.194 53980 22
 SNPS_VERDI_INTERNAL_LP_XML_NEW_FLOW=1
 SNPS_VCS_VHDL_WRAPPER_KDB=1
 SNPS_VCS_PYTHON3=/tools/synopsys/vcs/W-2024.09-SP1/linux64/bin/Python3/bin/python3
@@ -722,8 +722,8 @@ MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl
 MODULESHOME=/usr/share/Modules
 MODULEPATH=/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
 MFLAGS=
-MAKE_TERMOUT=/dev/pts/1
-MAKE_TERMERR=/dev/pts/1
+MAKE_TERMOUT=/dev/pts/14
+MAKE_TERMERR=/dev/pts/14
 MAKELEVEL=1
 MAKEFLAGS=
 LOADEDMODULES=
@@ -903,8 +903,8 @@ BASH_FUNC__module_raw%%=() {  eval "$(/usr/bin/tclsh '/usr/share/Modules/libexec
 1733289098 /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/macros/uvm_global_defines.svh
 1733289098 /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/macros/uvm_version_defines.svh
 1733289099 /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/uvm_macros.svh
-1748086482 ./tb/tb_SPI.sv
-1747992752 ./rtl/SPI_top.v
+1748089816 ./tb/tb_SPI.sv
+1748089319 ./rtl/SPI_top.v
 1747981003 ./rtl/SPI_Slave.v
 1747991593 ./rtl/SPI_Master.v
 1733289099 /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv
@@ -920,5 +920,5 @@ BASH_FUNC__module_raw%%=() {  eval "$(/usr/bin/tclsh '/usr/share/Modules/libexec
 1733286010 /tools/synopsys/vcs/W-2024.09-SP1/linux64/lib/liberrorinf.so
 1733286000 /tools/synopsys/vcs/W-2024.09-SP1/linux64/lib/libsnpsmalloc.so
 1733285992 /tools/synopsys/vcs/W-2024.09-SP1/linux64/lib/libvfs.so
-1748086493 ./build/simv.daidir
+1748089837 ./build/simv.daidir
 -1 partitionlib

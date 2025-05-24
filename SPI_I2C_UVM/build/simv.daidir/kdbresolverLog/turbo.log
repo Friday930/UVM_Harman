@@ -1,3 +1,3 @@
 Command Line: /tools/synopsys/vcs/W-2024.09-SP1/linux64/bin/elabcom -simflow -KDBRESOLVER -simvdaidir /home/hedu22/dev/SPI_I2C_UVM/./build/simv.daidir -saveLevel -ssv -ssy -q -logdir /home/hedu22/dev/SPI_I2C_UVM/./build/simv.daidir/kdbresolverLog
 uname(Linux kccisynop2 5.14.0-427.13.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Wed Apr 10 10:29:16 EDT 2024 x86_64)
-au time 0.158921 0.151234 0.019105 delta 110501888 110501888 total 343478272 343478272
+au time 0.159109 0.159946 0.010368 delta 110481408 110481408 total 343457792 343457792

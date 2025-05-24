@@ -13,7 +13,7 @@ module SPI_top (
 );
 
     wire SCLK, MISO, MOSI;
-    assign MISO = MOSI;
+    // assign MISO = MOSI;
 
     SPI_Master U_SPI_Master(
         // global signals
@@ -33,13 +33,13 @@ module SPI_top (
         .MISO(MISO)
     );
 
-    // SPI_Slave U_SPI_Slave(
-    //     .clk(clk),
-    //     .reset(reset),
-    //     .SCLK(SCLK),
-    //     .MOSI(MOSI),
-    //     .MISO(MISO),
-    //     .SS(SS)
-    // );
+    SPI_Slave U_SPI_Slave(
+        .clk(clk),
+        .reset(reset),
+        .SCLK(SCLK),
+        .MOSI(MOSI),
+        .MISO(MISO),
+        .SS(SS)
+    );
     
 endmodule

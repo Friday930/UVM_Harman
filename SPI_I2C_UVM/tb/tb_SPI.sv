@@ -57,16 +57,21 @@ class SPI_sequence extends uvm_sequence #(SPI_seq_item);
     SPI_seq_item SPI_item;
 
     virtual task body();       
-        // Write 명령 (8'b10000000) - 랜덤 데이터로 변경
-        send_transaction();
+        // Write 명령 (8'b10000000)
+        send_fixed_transaction(8'b10000000);
         
         // 4번의 write 데이터 - 각각 랜덤
-        for (int i = 0; i < 10; i++) begin
+        for (int i = 0; i < 4; i++) begin
             send_transaction();
         end
         
         // Read 명령 (8'h00)
         send_fixed_transaction(8'h00);
+
+        // 4번의 write 데이터 - 각각 랜덤
+        for (int i = 0; i < 4; i++) begin
+            send_transaction();
+        end
         
         // 4번의 read 데이터 (8'hff)
         for (int i = 0; i < 4; i++) begin
@@ -157,7 +162,7 @@ class SPI_driver extends uvm_driver #(SPI_seq_item);
             seq_item_port.item_done();
             
             // 10개 트랜잭션 완료 후 종료
-            if (transaction_count >= 20) begin
+            if (transaction_count >= 10) begin
                 S_if.SS = 1;  // 최종 비활성화
                 // `uvm_info("DRV", "SS = 1 (End of scenario)", UVM_NONE);
                 break;
