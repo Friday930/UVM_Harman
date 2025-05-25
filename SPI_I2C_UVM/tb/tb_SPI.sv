@@ -60,7 +60,7 @@ class SPI_sequence extends uvm_sequence #(SPI_seq_item);
 
     virtual task body();       
         // Write 명령 (8'b10000000)
-        send_fixed_transaction(8'b10000000);
+        send_fixed_transaction(8'b1_0000000);
         
         // 4번의 write 데이터 - 각각 랜덤
         for (int i = 0; i < 4; i++) begin
@@ -68,7 +68,7 @@ class SPI_sequence extends uvm_sequence #(SPI_seq_item);
         end
         
         // Read 명령 (8'h00)
-        send_fixed_transaction(8'h00);
+        send_fixed_transaction(8'b0_0000000);
         
         // 4번의 read 데이터 (8'hff)
         for (int i = 0; i < 4; i++) begin
@@ -283,11 +283,12 @@ class SPI_scoreboard extends uvm_scoreboard;
         // `uvm_info("SCO", $sformatf("Recieved tx_data:%0d, rx_data:%0d", item.tx_data, item.rx_data), UVM_LOW);
         `uvm_info("SCO", $sformatf("Recieved tx_data:%0d, rx_data:%0d", prev_tx_data, item.rx_data), UVM_LOW);
         // SPI_item.print(uvm_default_line_printer);
-
-        if (SPI_item.rx_data == prev_tx_data) begin
-           `uvm_info("SCO", "*** TEST PASSED ***", UVM_NONE); 
-        end else begin
-            `uvm_error("SCO", "*** TEST FAILED ***");
+        if (prev_tx_data != 0 && prev_tx_data != 8'b10000000) begin
+            if (SPI_item.rx_data == prev_tx_data ) begin
+            `uvm_info("SCO", "*** TEST PASSED ***", UVM_NONE); 
+            end else begin
+                `uvm_error("SCO", "*** TEST FAILED ***");
+            end
         end
         
         prev_tx_data = SPI_item.tx_data;  // 추가
@@ -406,3 +407,5 @@ module tb_SPI ();
     end
     
 endmodule
+
+

@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+
 module SPI_Slave (
     input        clk,
     input        reset,
@@ -136,20 +137,8 @@ module SPI_Slave_Intf (
 
     assign so_done = so_done_reg;
 
-    // 안되면 지우기 시작
-    reg [7:0] immediate_output;
-
-    always @(*) begin
-        if (!SS) begin
-            immediate_output = so_data;  // SS 활성화 즉시 so_data 반영
-        end else begin
-            immediate_output = 8'h00;
-        end
-    end
-
-    assign MISO = ~SS ? immediate_output[7] : 1'bz;
-    // 안되면 지우기 끝
-    // assign MISO = ~SS ? so_data_reg[7] : 1'bz;
+    
+    assign MISO = ~SS ? so_data_reg[7] : 1'bz;
 
     always @(posedge clk, posedge reset) begin
         if (reset) begin
@@ -272,8 +261,8 @@ module SPI_Slave_Reg (
             end
             WRITE_PHASE: begin
                 if (!ss_n) begin
-                    so_start_next = 1'b1;
-                    so_data = si_data; // two lines erase
+                    // so_start_next = 1'b1;
+                    // so_data = si_data; // two lines erase
                     if (si_done) begin
                         slv_reg[addr_reg] = si_data;
                         if (addr_reg == 3) begin

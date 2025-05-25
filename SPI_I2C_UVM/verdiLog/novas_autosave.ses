@@ -17,7 +17,7 @@ ConstrViewShow = 0
 InherViewShow = 0
 FSDBMsgShow = 0
 AnnotationShow = 0
-Console = TRUE
+Console = FALSE
 powerDumped = 0
 [fusa]
 fdb_server = 
@@ -25,17 +25,16 @@ fdb_proj =
 fdb_campaign = 
 fdb_tool = 
 [hb]
-postSimFile = /home/hedu22/dev/SPI_I2C_UVM/inter.fsdb
-syncTime = 40326000
-viewport = 0 23 2560 1369 0 0 412 1918
-activeNode = "uvm_custom_install_recording.unnamed$$_0._vcs_catcher.super.process_all_report_catchers.catcher.m_modified_report_message"
-activeScope = "uvm_custom_install_recording.unnamed$$_0._vcs_catcher.process_all_report_catchers.catcher.m_modified_report_message.do_copy.report_message.__m_uvm_field_automation.unnamed$$_0.local_data__.create.tmp._report_server.get_server.cs.inst.get_report_server.unn\
-amed$$_0.f.execute_report_message.unnamed$$_9.l_root.run_test"
-activeFile = "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh#inc__uvm_pkg__60#"
+postSimFile = /home/hedu22/dev/SPI_I2C_UVM/build/wave.fsdb
+syncTime = 40345000
+viewport = 8 31 2560 1369 0 0 634 2558
+activeNode = "tb_SPI"
+activeScope = "tb_SPI"
+activeFile = "./tb/tb_SPI.sv"
 interactiveMode = False
 viewType = Source
 simulatorMode = False
-sourceBeginLine = 501
+sourceBeginLine = 374
 baMode = False
 srcLineNum = True
 AutoWrap = True
@@ -52,26 +51,23 @@ DnDtraceCrossHierOnly = True
 leadingZero = False
 signalPane = False
 SourceVerticalScrollLines = 5
-Scope1 = "uvm_custom_install_recording.unnamed$$_0._vcs_catcher.process_all_report_catchers.catcher.m_modified_report_message.do_copy.report_message.__m_uvm_field_automation.unnamed$$_0.local_data__.create.tmp._report_server.get_server.cs.inst.get_report_server.unn\
-amed$$_0.f.execute_report_message.unnamed$$_9.l_root.run_test"
-Scope2 = "tb_SPI"
-rangeSelection = 527 527 1 4 1 1
+Scope1 = "tb_SPI"
+multipleSelection = 1 374 2 0 0
 sdfCheckUndef = FALSE
 simFlow = FALSE
 [hb.design]
 importCmd = "-dbdir" "./build/simv.daidir" 
 invokeDir = /home/hedu22/dev/SPI_I2C_UVM
 [hb.sourceTab.1]
-scope = uvm_custom_install_recording.unnamed$$_0._vcs_catcher.process_all_report_catchers.catcher.m_modified_report_message.do_copy.report_message.__m_uvm_field_automation.unnamed$$_0.local_data__.create.tmp._report_server.get_server.cs.inst.get_report_server.unna\
-med$$_0.f.execute_report_message.unnamed$$_9.l_root.run_test
-File = /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh#inc__uvm_pkg__60#
-Line = 502
+scope = tb_SPI
+File = /home/hedu22/dev/SPI_I2C_UVM/tb/tb_SPI.sv
+Line = 375
 [nMemoryManager]
-WaveformFile = /home/hedu22/dev/SPI_I2C_UVM/inter.fsdb
+WaveformFile = /home/hedu22/dev/SPI_I2C_UVM/build/wave.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 25 2560 594 123 65
+viewPort = 0 25 2560 661 123 65
 primaryWindow = TRUE
 SessionFile = /home/hedu22/dev/SPI_I2C_UVM/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE
