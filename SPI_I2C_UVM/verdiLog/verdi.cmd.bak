@@ -1,14 +1,16 @@
+verdiSetActWin -dock widgetDock_<Watch>
 simSetSimulator "-vcssv" -exec "./build/simv" -args "+UVM_TESTNAME=test"
 debImport "-dbdir" "./build/simv.daidir"
 debLoadSimResult /home/hedu22/dev/SPI_I2C_UVM/build/wave.fsdb
 wvCreateWindow
 verdiSetActWin -win $_nWave2
-verdiWindowResize -win $_Verdi_1 "8" "31" "1920" "1009"
+verdiWindowResize -win $_Verdi_1 "8" "31" "2560" "1369"
 verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+verdiDockWidgetHide -dock widgetDock_<Watch>
+srcTBSetHiddenView -view WatchView
 wvGetSignalOpen -win $_nWave2
 wvGetSignalSetScope -win $_nWave2 "/_vcs_msglog"
 verdiSetActWin -win $_nWave2
-wvGetSignalSetScope -win $_nWave2 "/tb_SPI"
 wvGetSignalSetScope -win $_nWave2 "/tb_SPI/dut"
 wvSetPosition -win $_nWave2 {("G1" 13)}
 wvSetPosition -win $_nWave2 {("G1" 13)}
@@ -57,26 +59,70 @@ wvSetPosition -win $_nWave2 {("G1" 13)}
 wvGetSignalClose -win $_nWave2
 wvSelectSignal -win $_nWave2 {( "G1" 1 )} 
 wvSelectSignal -win $_nWave2 {( "G1" 1 2 3 )} 
+wvSetPosition -win $_nWave2 {("G1" 6)}
+wvSetPosition -win $_nWave2 {("G1" 7)}
+wvSetPosition -win $_nWave2 {("G1" 8)}
+wvSetPosition -win $_nWave2 {("G1" 9)}
 wvSetPosition -win $_nWave2 {("G1" 10)}
 wvMoveSelected -win $_nWave2
 wvSetPosition -win $_nWave2 {("G1" 10)}
+wvSetCursor -win $_nWave2 1128692.603725 -snap {("G2" 0)}
 wvZoomOut -win $_nWave2
 wvZoomOut -win $_nWave2
 wvZoomOut -win $_nWave2
-wvZoomIn -win $_nWave2
-wvZoomIn -win $_nWave2
+wvGetSignalOpen -win $_nWave2
+wvGetSignalSetScope -win $_nWave2 "/_vcs_msglog"
+wvGetSignalSetScope -win $_nWave2 "/tb_SPI"
+wvGetSignalSetScope -win $_nWave2 "/tb_SPI/dut"
+wvGetSignalSetScope -win $_nWave2 "/tb_SPI/dut/U_SPI_Slave"
+wvSetPosition -win $_nWave2 {("G1" 21)}
+wvSetPosition -win $_nWave2 {("G1" 21)}
+wvAddSignal -win $_nWave2 -clear
+wvAddSignal -win $_nWave2 -group {"G1" \
+{/tb_SPI/dut/SS} \
+{/tb_SPI/dut/clk} \
+{/tb_SPI/dut/cpha} \
+{/tb_SPI/dut/cpol} \
+{/tb_SPI/dut/done} \
+{/tb_SPI/dut/ready} \
+{/tb_SPI/dut/reset} \
+{/tb_SPI/dut/MISO} \
+{/tb_SPI/dut/MOSI} \
+{/tb_SPI/dut/SCLK} \
+{/tb_SPI/dut/U_SPI_Slave/MISO} \
+{/tb_SPI/dut/U_SPI_Slave/MOSI} \
+{/tb_SPI/dut/U_SPI_Slave/SCLK} \
+{/tb_SPI/dut/U_SPI_Slave/SS} \
+{/tb_SPI/dut/U_SPI_Slave/clk} \
+{/tb_SPI/dut/U_SPI_Slave/reset} \
+{/tb_SPI/dut/U_SPI_Slave/si_data\[7:0\]} \
+{/tb_SPI/dut/U_SPI_Slave/si_done} \
+{/tb_SPI/dut/U_SPI_Slave/so_data\[7:0\]} \
+{/tb_SPI/dut/U_SPI_Slave/so_done} \
+{/tb_SPI/dut/U_SPI_Slave/so_start} \
+{/tb_SPI/dut/rx_data\[7:0\]} \
+{/tb_SPI/dut/start} \
+{/tb_SPI/dut/tx_data\[7:0\]} \
+}
+wvAddSignal -win $_nWave2 -group {"G2" \
+}
+wvSelectSignal -win $_nWave2 {( "G1" 11 12 13 14 15 16 17 18 19 20 21 )} 
+wvSetPosition -win $_nWave2 {("G1" 21)}
+wvGetSignalClose -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 15)}
+wvSetPosition -win $_nWave2 {("G1" 22)}
+wvSetPosition -win $_nWave2 {("G1" 23)}
+wvSetPosition -win $_nWave2 {("G1" 24)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G2" 11)}
+wvSetPosition -win $_nWave2 {("G2" 11)}
+wvSetCursor -win $_nWave2 9249023.305085 -snap {("G2" 1)}
+wvSetCursor -win $_nWave2 5460677.966102 -snap {("G2" 1)}
 wvZoomOut -win $_nWave2
-wvZoomIn -win $_nWave2
-wvSetCursor -win $_nWave2 211329.425557 -snap {("G1" 6)}
-wvSetCursor -win $_nWave2 871733.880422 -snap {("G1" 1)}
-wvSetCursor -win $_nWave2 158497.069168 -snap {("G1" 1)}
-wvSetCursor -win $_nWave2 8149390.973036 -snap {("G1" 6)}
-wvSetCursor -win $_nWave2 8241847.596717 -snap {("G1" 9)}
-srcDeselectAll -win $_nTrace1
-verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
-wvSetCursor -win $_nWave2 9641905.041032 -snap {("G1" 7)}
-verdiSetActWin -win $_nWave2
-srcDeselectAll -win $_nTrace1
-verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
-verdiSetActWin -dock widgetDock_<Inst._Tree>
-debExit
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 3982617.220801 -snap {("G2" 6)}
+wvSelectSignal -win $_nWave2 {( "G2" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G2" 1 )} 
+wvSelectSignal -win $_nWave2 {( "G2" 8 )} 
+wvSelectSignal -win $_nWave2 {( "G2" 9 )} 

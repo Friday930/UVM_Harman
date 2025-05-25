@@ -1,0 +1,506 @@
+Command: /home/hedu22/dev/SPI_I2C_UVM/build/simv +UVM_TESTNAME=test -sml=verdi +fsdb+gate=off -ucli2Proc -ucli -l /home/hedu22/dev/SPI_I2C_UVM/verdiLog/sim.log
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  May 25 17:48 2025
+Warning : License for product VCS-BASE-RUNTIME will expire within 20 days, on: 13-jun-2025.
+If you would like to temporarily disable this message, set 
+ the VCS_LIC_EXPIRE_WARNING environment variable to the number of days
+before expiration that you want this message to start (the minimum is 0).
+<slp!&*()_+>
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+  ***********       IMPORTANT RELEASE NOTES         ************
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh<sls!&*()_+>line: 402<sls!&*()_+>time: 0 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+
+ucli% synUtils::getArch
+linux64
+ucli% loaddl -simv /tools/synopsys/verdi/W-2024.09-SP2/share/PLI/VCS/LINUXAMD64/libnovas.so LoadFSDBDumpCmd;LoadFSDBDumpCmd
+LoadFSDBDumpCmd success
+ucli% config ckptfsdbcheck off;config endofsim noexit;config onfail {enable all};config followactivescope on;catch {setUcliVerdiConnected};set watch::resultTagsForVerdiBP {<ucli_break_bp_status_begin> <ucli_break_bp_status_end>};set ucliCore::support_restore_through_stask_in_verdi 1;cbug::config pretty_print auto;fsdbDumpfile {/home/hedu22/dev/SPI_I2C_UVM/inter.fsdb} ;fsdbDumpflush ; 
+*Verdi* Loading libsscore_vcs202409.so
+FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2, Linux x86_64/64bit, 03/03/2025
+(C) 1996 - 2025 by Synopsys, Inc.
+*Verdi* : Create FSDB file '/home/hedu22/dev/SPI_I2C_UVM/inter.fsdb'
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+ucli% synEnv::hasFataled
+0
+ucli% ucliCore::getToolPID
+3030041
+ucli% sps_interactive
+*Verdi* : Enable RPC Server(3030041)
+
+ucli% ucliCore::getToolPID
+3030041
+ucli% ucliCore::getToolPID
+3030041
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% puts $ucliCore::nativeUcliMode
+0
+
+ucli% ucliCore::getToolTopPID
+3030041
+ucli% pid
+3030053
+ucli% synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.hedu22.3030041 }
+
+ucli% if { [info vars watch::vcbp_str_len_limit_of_get_value] != ""} {set watch::vcbp_str_len_limit_of_get_value 1024}
+1024
+ucli% info command stateVerdiChangeCB
+
+ucli% proc stateVerdiChangeCB args { if {$ucliGUI::state eq "terminated"} {puts "\n<VERDI_Terminated>\n";catch {setVerdiSimTerminated}}}
+
+ucli% trace variable ucliGUI::state wu stateVerdiChangeCB
+
+ucli% if {[catch {rename synopsys::restore verdiHack::restore} ]} {puts "0"}
+
+ucli% proc synopsys::restore {args} { verdiHack::restore $args; puts "\n<VERDI_RESTORE>\n"}
+
+ucli% if {[catch {rename quit verdiHack::quit} ]} {puts "0"}
+
+ucli% proc quit {args} { if {[string length $args] == 0} { verdiHack::quit; } elseif {([string equal "-h" $args] == 1)||([string equal "-he" $args] == 1)||([string equal "-hel" $args] == 1)||([string equal "-help" $args] == 1)} { puts "\n quit           # Exit the simulation.\n \[-noprompt\]        (Exit the simulation and Verdi.)\n"} elseif {([string equal "-n" $args] == 1)||([string equal "-no" $args] == 1)||([string equal "-nop" $args] == 1)||([string equal "-nopr" $args] == 1)||([string equal "-nopro" $args] == 1)||([string equal "-noprom" $args] == 1)||([string equal "-nopromp" $args] == 1)||([string equal "-noprompt" $args] == 1)} { puts "\nVERDI_EXIT_N\n" } else { verdiHack::quit $args; } }
+
+ucli% if {[catch {rename exit verdiHack::exit} ]} {puts "0"}
+
+ucli% proc exit {args} { if {[string length $args] == 0} { verdiHack::exit; } elseif {([string equal "-h" $args] == 1)||([string equal "-he" $args] == 1)||([string equal "-hel" $args] == 1)||([string equal "-help" $args] == 1)} { puts "\n exit           # Exit the simulation.\n \[-noprompt\]        (Exit the simulation and Verdi.)\n"} elseif {([string equal "-n" $args] == 1)||([string equal "-no" $args] == 1)||([string equal "-nop" $args] == 1)||([string equal "-nopr" $args] == 1)||([string equal "-nopro" $args] == 1)||([string equal "-noprom" $args] == 1)||([string equal "-nopromp" $args] == 1)||([string equal "-noprompt" $args] == 1)} { puts "\nVERDI_EXIT_N\n" } else { verdiHack::exit $args; } }
+
+ucli% proc checkpoint::beforeRecreate {} { sps_interactive }
+
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% save::getUserdefinedProcs
+::stateVerdiChangeCB ::LoadFSDBDumpCmd
+ucli% info procs
+ipi_get_str fsdbDumpMDAByFile fsdbDumpMDA echo fsdbDumpMemNow fsdbAutoSwitchDumpfile unknown sps_interactive auto_import stat fsdbDumpfile setenv auto_execok pkg_mkIndex stateVerdiChangeCB fsdbDumpSingle proc_body ipi_begin fsdbDumpoff getenv fsdbDumplimit fsdbDumpPattern ipi_handle ipi_get_prop fsdbDumpvarsByFile fsdbDumpMDAInScope lminus ipi_sim_get ls auto_load_index proc_args fsdbAddRuntimeSignal fsdbDumpSC print_message_info ridbDump fsdbDumpSVAoff fsdbSuppress fsdbDumpvars help fsdbDumpMDAOnChange ipi_control auto_qualify fsdbDumpMem sourceSavedOnbreakHandler tclPkgUnknown printenv ipi_handle_by_name helpdoc fsdbDumpMemInScope fsdbDumpFinish is_true fsdbDumpon sh fsdbQueryInfo LoadFSDBDumpCmd fsdbDumpPSL fsdbDumpSVA ipi_end wrapperSpecmanSn fsdbDumpSVAon fsdbDumpClassObjectByFile is_false auto_load fsdbDumpPSLon ipi_get_int64 fsdbSubstituteHier ipi_get_value ipi_iterate exit fsdbDumpMemInFile tclLog fsdbDumpflush get_unix_variable mem_debug ipi_scan fsdbDumpPSLoff fsdbDumpClassObject fsdbDumpvarsToFile set_unix_variable bgerror fsdbDumpStrength add_group fsdbSwitchDumpfile source add_wave sos_fsdbDumpvars ipi_set_prop unsetenv fsdbDumpvarsES readline fsdbDisplay ipi_handle_free set_group ipi_get quit define_proc_attributes tclPkgSetup fsdbDumpMDANow ipi_init_play_tcl fsdbDumpIO
+ucli% info commands
+ipi_get_str cchange subst fsdbDumpMDAByFile pwd cshow guiSource fsdbDumpMDA echo fsdbDumpMemNow fsdbAutoSwitchDumpfile ucliConnectToSharedMem unknown ucliIsScriptPauseByVerdi lrange sps_interactive auto_import setVerdiSimTerminated coverage case stat fsdbDumpfile break setenv dump auto_execok msglog linsert pkg_mkIndex dumplist catch stateVerdiChangeCB mpformat fsdbDumpSingle if join detach_sim halt proc_body abortScriptAfterDetachVerdi report_violations which lp_show ipi_begin pause dve_help fsdbDumpoff format getenv listing fsdbDumplimit package binary trace ctimeout onbreak after flush fsdbDumpPattern step restore ipi_handle power continue get_command_option_values force try foreach ipi_get_prop fsdbDumpvarsByFile lrepeat tailcall unset fsdbDumpMDAInScope lminus ipi_sim_get interp write_app_var lindex stack yield ls resetInterruptCount runAfterDetachVerdi eof saif list printvar create_command_group keysFileChangeCB virtual auto_load_index checkpoint proc_args finish fsdbAddRuntimeSignal cgettimeout sexpr lsearch fblocked fsdbDumpSC fanin lappend print_message_info proc cextract ridbDump writelist get_defined_commands cdump fsdbDumpSVAoff fsdbSuppress man set_sig_vas_in_waiting_input fconfigure fsdbDumpvars help fsdbDumpMDAOnChange ipi_control switch auto_qualify fsdbDumpMem mpexpr status sourceSavedOnbreakHandler tclPkgUnknown close printenv ipi_handle_by_name helpdoc thread lreverse set read fsdbDumpMemInScope initAttachableFile unalias fsdbDumpFinish setVerdiAttachable seek while set_cle_options is_true set_message_info writeKeyLog cbug fsdbDumpon find_forces yieldto sh start_verdi load fsdbQueryInfo memory sn vcsExecFuncInSharedObject cenable history puts gdb loadSharedObject tblog assertion resume _synopsys_cci_unalias socket tell open get_message_ids cadd exec pid stop LoadFSDBDumpCmd unloadSharedObject redirect fsdbDumpPSL throw fsdbDumpSVA ipi_end return ace wrapperSpecmanSn error fsdbDumpSVAon split fsdbDumpClassObjectByFile is_false array ucliAttachedByVerdi vbus get lreplace concat coroutine fcopy update parse_proc_arguments report_app_var run search setUcliVerdiStatus for append auto_load fsdbDumpPSLon ucliLaunchVerdi alias logFileChangeCB scan setUcliVerdiConnected apply abort set_current_command_mode release zlib chan loads _spw_define_proc_attributes ipi_get_int64 onerror print_suppressed_messages scope fileevent fsdbSubstituteHier inputFileChangeCB regexp resultTagsForVerdiCB set_app_var ipi_get_value cdelete upvar ipi_iterate save encoding onfail exit fsdbDumpMemInFile incr tclLog fsdbDumpflush get_message_info get_unix_variable show senv glob mem_debug ipi_scan GUIsource config fsdbDumpPSLoff time eval lassign fsdbDumpClassObject gets fsdbDumpvarsToFile tcl_exit set_unix_variable restart start change llength variable constraints xprop bgerror fsdbDumpStrength call clock info apropos add_group fsdbSwitchDumpfile ucliDetachVerdi source GUI_tcl_shell_puts global tcheck initreg add_wave report_timing sos_fsdbDumpvars ipi_set_prop next drivers cd file lmap unload namespace loaddl unsetenv get_app_var fsdbDumpvarsES suppress_message vwait dict readline fsdbDisplay uplevel ipi_handle_free date set_group lset rename ipi_get quit sh_list_key_bindings do unsuppress_message define_proc_attributes error_info tclPkgSetup expr printPromptStr regsub onCheckpointCB csave fsdbDumpMDANow dtl_load ipi_init_play_tcl lsort fsdbDumpIO doFileChangeCB _synopsys_cci_alias writeHistoryLog cdisable string
+ucli% set ucliCore::resultTagsForVerdi [list <?special_verdi_begin?> <?special_verdi_end?>]
+<?special_verdi_begin?> <?special_verdi_end?>
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% if {[catch {get uvm_pkg.UVM_VERSION_STRING} result] == 0} {puts $result}
+
+ucli% senv hasTB
+1
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% fsdbDumpvars 0 "tb_SPI.dut.SS"  +all +trace_process;fsdbDumpvars 0 "tb_SPI.dut.clk"  +all +trace_process;fsdbDumpvars 0 "tb_SPI.dut.cpha"  +all +trace_process;fsdbDumpvars 0 "tb_SPI.dut.cpol"  +all +trace_process;fsdbDumpvars 0 "tb_SPI.dut.done"  +all +trace_process;fsdbDumpvars 0 "tb_SPI.dut.ready"  +all +trace_process;fsdbDumpvars 0 "tb_SPI.dut.reset"  +all +trace_process;fsdbDumpvars 0 "tb_SPI.dut.MISO"  +all +trace_process;fsdbDumpvars 0 "tb_SPI.dut.MOSI"  +all +trace_process;fsdbDumpvars 0 "tb_SPI.dut.SCLK"  +all +trace_process;fsdbDumpvars 0 "tb_SPI.dut.rx_data"  +all +trace_process;fsdbDumpvars 0 "tb_SPI.dut.start"  +all +trace_process;fsdbDumpvars 0 "tb_SPI.dut.tx_data"  +all +trace_process
+*Verdi* : Dumping the signal (tb_SPI.dut.SS).
+*Verdi* : Dumping the signal (tb_SPI.dut.clk).
+*Verdi* : Dumping the signal (tb_SPI.dut.cpha).
+*Verdi* : Dumping the signal (tb_SPI.dut.cpol).
+*Verdi* : Dumping the signal (tb_SPI.dut.done).
+*Verdi* : Dumping the signal (tb_SPI.dut.ready).
+*Verdi* : Dumping the signal (tb_SPI.dut.reset).
+*Verdi* : Dumping the signal (tb_SPI.dut.MISO).
+*Verdi* : Dumping the signal (tb_SPI.dut.MOSI).
+*Verdi* : Dumping the signal (tb_SPI.dut.SCLK).
+*Verdi* : Dumping the signal (tb_SPI.dut.rx_data).
+*Verdi* : Dumping the signal (tb_SPI.dut.start).
+*Verdi* : Dumping the signal (tb_SPI.dut.tx_data).
+
+ucli% fsdbDumpflush 
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% fsdbDumpflush 
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+ucli% senv
+activeDomain: Verilog
+activeFile: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/uvm_pkg.sv
+activeFrame: -1
+activeLine: 28
+activeScope: uvm_pkg
+activeThread: 0
+endCol: 0
+file: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/uvm_pkg.sv
+frame: -1
+fsdbFilename: 
+hasTB: 1
+inputFilename: 
+keyFilename: ucli.key
+line: 28
+logFilename: /home/hedu22/dev/SPI_I2C_UVM/verdiLog/sim.log
+macroIndex: -1
+macroOffset: -1
+pid: 3030041
+scope: uvm_pkg
+startCol: 0
+state: stopped
+thread: 0
+time: 0
+timePrecision: 1 ps
+vcdFilename: 
+vpdFilename:
+ucli% puts $::ucliCore::cbug_active
+0
+
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% checkpoint -list -all
+There are no checkpoints present.
+ucli% stop
+No stop points are set
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% stop -line 124 -file /home/hedu22/dev/SPI_I2C_UVM/tb/tb_SPI.sv 
+1
+ucli% synEnv::hasFataled
+0
+ucli% ucliCore::getToolPID
+3030041
+ucli% synEnv::isFinished
+0
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% fsdbDumpflush 
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+ucli% senv
+activeDomain: Verilog
+activeFile: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/uvm_pkg.sv
+activeFrame: -1
+activeLine: 28
+activeScope: uvm_pkg
+activeThread: 0
+endCol: 0
+file: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/uvm_pkg.sv
+frame: -1
+fsdbFilename: 
+hasTB: 1
+inputFilename: 
+keyFilename: ucli.key
+line: 28
+logFilename: /home/hedu22/dev/SPI_I2C_UVM/verdiLog/sim.log
+macroIndex: -1
+macroOffset: -1
+pid: 3030041
+scope: uvm_pkg
+startCol: 0
+state: stopped
+thread: 0
+time: 0
+timePrecision: 1 ps
+vcdFilename: 
+vpdFilename:
+ucli% puts $::ucliCore::cbug_active
+0
+
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% checkpoint -list -all
+There are no checkpoints present.
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% stop
+1: -line 124 -file /home/hedu22/dev/SPI_I2C_UVM/tb/tb_SPI.sv
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% stop -disable 1
+1
+ucli% stop -show 1
+1: -line 124 -file /home/hedu22/dev/SPI_I2C_UVM/tb/tb_SPI.sv -disable
+ucli% stop -delete 1
+1
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% run
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : End of traversing.
+*Verdi* WARNING: Env/runtime option has specified fsdbfile name as "/home/hedu22/dev/SPI_I2C_UVM/inter.fsdb". Fsdbfile name in task "wave.fsdb" is ignored.
+<slp!&*()_+>
+UVM_INFO @ 0: reporter [RNTST] Running test test...
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh<sls!&*()_+>line: 504<sls!&*()_+>time: 0 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(589) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               test                    -     @342 
+  ENV                      SPI_environment         -     @361 
+    AGT                    SPI_agent               -     @389 
+      DRV                  SPI_driver              -     @418 
+        rsp_port           uvm_analysis_port       -     @437 
+        seq_item_port      uvm_seq_item_pull_port  -     @427 
+      MON                  SPI_monitor             -     @399 
+        WRITE              uvm_analysis_port       -     @408 
+      SQR                  uvm_sequencer           -     @447 
+        rsp_export         uvm_analysis_export     -     @456 
+        seq_item_export    uvm_seq_item_pull_imp   -     @574 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    SCO                    SPI_scoreboard          -     @370 
+      READ                 uvm_analysis_imp        -     @379 
+--------------------------------------------------------------
+
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh<sls!&*()_+>line: 589<sls!&*()_+>time: 0 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(100) @ 195000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 0
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/seq/uvm_sequence_item.svh<sls!&*()_+>line: 439<sls!&*()_+>time: 195000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(187) @ 205000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=0
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 187<sls!&*()_+>time: 205000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(252) @ 8206000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:0, rx:0
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 252<sls!&*()_+>time: 8206000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(284) @ 8206000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:0, rx_data:0
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 284<sls!&*()_+>time: 8206000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(288) @ 8206000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 288<sls!&*()_+>time: 8206000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(88) @ 8225000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 128
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/seq/uvm_sequence_item.svh<sls!&*()_+>line: 439<sls!&*()_+>time: 8225000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(187) @ 8235000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=128
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 187<sls!&*()_+>time: 8235000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(252) @ 16236000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:128, rx:128
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 252<sls!&*()_+>time: 16236000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(284) @ 16236000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:128, rx_data:128
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 284<sls!&*()_+>time: 16236000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(288) @ 16236000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 288<sls!&*()_+>time: 16236000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(88) @ 16255000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 128
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/seq/uvm_sequence_item.svh<sls!&*()_+>line: 439<sls!&*()_+>time: 16255000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(187) @ 16265000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=201
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 187<sls!&*()_+>time: 16265000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(252) @ 24266000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:201, rx:201
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 252<sls!&*()_+>time: 24266000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(284) @ 24266000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:201, rx_data:201
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 284<sls!&*()_+>time: 24266000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(288) @ 24266000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 288<sls!&*()_+>time: 24266000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(88) @ 24285000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 128
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/seq/uvm_sequence_item.svh<sls!&*()_+>line: 439<sls!&*()_+>time: 24285000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(187) @ 24295000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=53
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 187<sls!&*()_+>time: 24295000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(252) @ 32296000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:53, rx:53
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 252<sls!&*()_+>time: 32296000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(284) @ 32296000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:53, rx_data:53
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 284<sls!&*()_+>time: 32296000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(288) @ 32296000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 288<sls!&*()_+>time: 32296000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(88) @ 32315000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 128
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/seq/uvm_sequence_item.svh<sls!&*()_+>line: 439<sls!&*()_+>time: 32315000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(187) @ 32325000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=132
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 187<sls!&*()_+>time: 32325000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(252) @ 40326000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:132, rx:132
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 252<sls!&*()_+>time: 40326000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(284) @ 40326000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:132, rx_data:132
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 284<sls!&*()_+>time: 40326000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(288) @ 40326000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 288<sls!&*()_+>time: 40326000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(100) @ 40345000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 128
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/seq/uvm_sequence_item.svh<sls!&*()_+>line: 439<sls!&*()_+>time: 40345000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(187) @ 40405000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=195
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 187<sls!&*()_+>time: 40405000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(252) @ 48406000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:195, rx:195
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 252<sls!&*()_+>time: 48406000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(284) @ 48406000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:195, rx_data:195
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 284<sls!&*()_+>time: 48406000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(288) @ 48406000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 288<sls!&*()_+>time: 48406000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(100) @ 48425000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 0
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/seq/uvm_sequence_item.svh<sls!&*()_+>line: 439<sls!&*()_+>time: 48425000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(187) @ 48435000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=0
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 187<sls!&*()_+>time: 48435000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(252) @ 56436000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:0, rx:255
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 252<sls!&*()_+>time: 56436000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(284) @ 56436000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:0, rx_data:255
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 284<sls!&*()_+>time: 56436000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_ERROR ./tb/tb_SPI.sv(290) @ 56436000: uvm_test_top.ENV.SCO [SCO] *** TEST FAILED ***
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 290<sls!&*()_+>time: 56436000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(100) @ 56455000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 255
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/seq/uvm_sequence_item.svh<sls!&*()_+>line: 439<sls!&*()_+>time: 56455000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(187) @ 56465000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=255
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 187<sls!&*()_+>time: 56465000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(252) @ 64466000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:0
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 252<sls!&*()_+>time: 64466000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(284) @ 64466000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:255, rx_data:0
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 284<sls!&*()_+>time: 64466000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_ERROR ./tb/tb_SPI.sv(290) @ 64466000: uvm_test_top.ENV.SCO [SCO] *** TEST FAILED ***
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 290<sls!&*()_+>time: 64466000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(100) @ 64485000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 255
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/seq/uvm_sequence_item.svh<sls!&*()_+>line: 439<sls!&*()_+>time: 64485000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(187) @ 64495000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=255
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 187<sls!&*()_+>time: 64495000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(252) @ 72496000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:255
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 252<sls!&*()_+>time: 72496000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(284) @ 72496000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:255, rx_data:255
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 284<sls!&*()_+>time: 72496000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(288) @ 72496000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 288<sls!&*()_+>time: 72496000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(100) @ 72515000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 255
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/seq/uvm_sequence_item.svh<sls!&*()_+>line: 439<sls!&*()_+>time: 72515000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(187) @ 72525000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=255
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 187<sls!&*()_+>time: 72525000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(252) @ 80526000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:255
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 252<sls!&*()_+>time: 80526000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(284) @ 80526000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:255, rx_data:255
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 284<sls!&*()_+>time: 80526000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO ./tb/tb_SPI.sv(288) @ 80526000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: ./tb/tb_SPI.sv<sls!&*()_+>line: 288<sls!&*()_+>time: 80526000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 80545000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh<sls!&*()_+>line: 431<sls!&*()_+>time: 80545000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 80545000: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh<sls!&*()_+>line: 705<sls!&*()_+>time: 80545000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 80545000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   53
+UVM_WARNING :    0
+UVM_ERROR :    2
+UVM_FATAL :    0
+** Report counts by id
+[DRV]    10
+[MON]    10
+[RNTST]     1
+[SCO]    20
+[SEQ]    10
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[UVMTOP]     1
+
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh<sls!&*()_+>line: 524<sls!&*()_+>time: 80545000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+$finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time             80545000
+Simulation complete, time is 80545000 ps.
+uvm_root.svh, 527 :     $finish;
+
+ucli% synEnv::hasFataled
+0
+ucli% ucliCore::getToolPID
+3030041
+ucli% save::getUserdefinedProcs
+::stateVerdiChangeCB ::LoadFSDBDumpCmd
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% fsdbDumpflush 
+*Verdi* : Flush all FSDB Files at 80,545,000 ps.
+
+ucli% senv
+activeDomain: TB
+activeFile: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh
+activeFrame: 2
+activeLine: 527
+activeScope: uvm_pkg.\uvm_root::run_test 
+activeThread: 21
+endCol: 0
+file: /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh
+frame: 2
+fsdbFilename: 
+hasTB: 1
+inputFilename: 
+keyFilename: ucli.key
+line: 527
+logFilename: /home/hedu22/dev/SPI_I2C_UVM/verdiLog/sim.log
+macroIndex: -1
+macroOffset: -1
+pid: 3030041
+scope: uvm_pkg.\uvm_root::run_test 
+startCol: 0
+state: stopped
+thread: 21
+time: 80545000
+timePrecision: 1 ps
+vcdFilename: 
+vpdFilename:
+ucli% puts $::ucliCore::cbug_active
+0
+
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% checkpoint -list -all
+There are no checkpoints present.
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% stop
+No stop points are set
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% finish; quit
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 80545000 ps
+CPU Time:      0.220 seconds;       Data structure size:   0.6Mb
+Sun May 25 17:49:55 2025
+
+<VERDI_Terminated>
+

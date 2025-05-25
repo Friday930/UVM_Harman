@@ -232,6 +232,7 @@ FindBarVisible =
 ColorTheme = classic
 version = Verdi_W-2024.09-SP2
 recent_commands_nWave = getSignal,zoomIn,zoomOut,editCut,openFile
+recent_commands_Verdi = tbvDebugRunContinue,tbvRunDebugMode
 prevColorTheme = classic
 SignalCaseInSensitive = FALSE
 [GlobalProp]
@@ -281,6 +282,14 @@ bScpecifyCellNameCase = False
 bSpecifyPinNameCase = False
 CellNameToCase = 
 PinNameToCase = 
+[InteractiveDebug]
+tbvLocalWatchArrayLimit = 50
+Watch_0 = 150 80 80 0
+Watch_1 = 150 80 80 537
+Watch_2 = 150 80 80 200
+Watch_3 = 150 80 80 200
+Watch_4 = 150 80 80 200
+Watch_5 = 150 80 80 200
 [Language]
 EditWindow_Font = COURIER12
 Background = ID_WHITE
@@ -385,8 +394,8 @@ savePropDtl = TRUE
 openFileDlg = 979,478,602,483
 tipViewerDlg = 751,371,398,259
 QwWarnMsgDlg = 970,555,600,250
-qWaveSignalDialog = 568,296,800,479
-QwUserAskDlg = 796,407,324,125
+qWaveSignalDialog = 880,468,800,479
+QwUserAskDlg = 1108,579,324,125
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -471,9 +480,11 @@ SimMode = TRUE
 interactiveDebugging = TRUE
 KeepBreakPoints = FALSE
 vcs_svPath = ./build/simv
-vcs_svOption = +UVM_TESTNAME=test
+smartlog = TRUE
+vcs_svOption = +UVM_TESTNAME=test  -sml=verdi
 [SimulationPlus2]
 eventDumpUnfinish = FALSE
+dumpPowerRoot = FALSE
 [Source]
 wordWrapOn = TRUE
 viewReuse = TRUE
@@ -506,6 +517,7 @@ nLineSize = 1024
 verbose_progress = FALSE
 [TestBenchBrowser]
 -showUVMDynamicHierTreeWin = FALSE
+DataViewTooltip = TRUE
 [Text]
 hdlTypeName = blue4
 hdlLibrary = blue4
@@ -589,7 +601,7 @@ pdmlMacro = ID_BLACK
 font = COURIER12
 annotFont = FIXED12
 [Text.1]
-viewport = 8 31 1920 1009 45
+viewport = 0 23 2560 1369 45
 [TextPrinter]
 Orientation = Landscape
 Indicator = FALSE
@@ -672,6 +684,63 @@ Button2 = "Next 1000 Time" "#1000 $stop;.\n"
 Button1 = "Dump All Signals" "$fsdbDumpvars;\n"
 [VIA]
 viaLogViewerDefaultRuleOneSearchForm = "share/VIA/Apps/PredefinedRules/Misc/Onesearch_rule.rc"
+viaLogViewerDefaultRuleInterForm = "share/VIA/Apps/PredefinedRules/UVM_OVM_i_rule.rc"
+[VIA.interactiveDebug.preference]
+DefaultDisplayTimeUnit = "1.000000ns"
+DefaultLogTimeUnit = "1.000000ns"
+[VIA.interactiveDebug.preference.vgifColumnSettingRC]
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0]
+parRuleSets = "/tools/synopsys/verdi/W-2024.09-SP2/share/VIA/Apps/PredefinedParRules/par_rule_OVM.rc /tools/synopsys/verdi/W-2024.09-SP2/share/VIA/Apps/PredefinedParRules/par_rule_UVM.rc /tools/synopsys/verdi/W-2024.09-SP2/share/VIA/Apps/PredefinedParRules/par_rule_LP.r\
+c /tools/synopsys/verdi/W-2024.09-SP2/share/VIA/Apps/PredefinedParRules/par_rule_VCS.rc "
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column0]
+name = "Code"
+width = 60
+visualIndex = 4
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column1]
+name = "Type"
+width = 60
+visualIndex = 5
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column2]
+name = "Message"
+width = 2000
+visualIndex = 6
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column3]
+name = "Reporter"
+width = 60
+visualIndex = 3
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column4]
+name = "Severity"
+width = 60
+visualIndex = 2
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column5]
+name = "Block's First Line"
+width = 120
+visualIndex = 1
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column6]
+name = "Time"
+width = 60
+visualIndex = 0
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference]
 DefaultDisplayTimeUnit = "1.000000ns"
 DefaultLogTimeUnit = "1.000000ns"
@@ -694,41 +763,44 @@ isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = "Message"
-width = 60
-visualIndex = 5
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
-name = "Type"
-width = 60
-visualIndex = 4
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
-name = "Code"
-width = 60
-visualIndex = 3
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
 name = "Time"
 width = 60
 visualIndex = 0
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+name = "Message"
+width = 60
+visualIndex = 5
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = "Type"
+width = 60
+visualIndex = 4
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+name = "Code"
+width = 60
+visualIndex = 3
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.parRule]
+parRulePathInterForm = ""
 [VIA.ruleHistory]
+/tools/synopsys/verdi/W-2024.09-SP2/share/VIA/Apps/PredefinedRules/UVM_OVM_i_rule.rc = 
 /tools/synopsys/verdi/W-2024.09-SP2/share/VIA/Apps/PredefinedRules/Misc/Onesearch_rule.rc = 
 [Wave]
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 568 296 800 479 220 387 484 187
-viewPort = 0 25 1920 423 123 65
+getSignalForm = 880 468 800 479 220 387 484 187
+viewPort = 0 25 2560 594 123 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -1000,4 +1072,4 @@ HighlightSameNet = TRUE
 [turbo_library]
 bdb_load_scope = 
 [wave.0]
-viewPort = 0 25 1920 423 123 65
+viewPort = 0 25 2560 594 123 65
