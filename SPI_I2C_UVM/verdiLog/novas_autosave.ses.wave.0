@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi_W-2024.09-SP2
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 2560 661 123 65
+viewPort 0 25 1924 729 123 63
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -17,7 +17,7 @@ signalSpacing 5
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
 zoom 0.000000 80545000.000000
-cursor 40345000.000000
+cursor 205000.000000
 marker 0.000000
 
 ; user define markers

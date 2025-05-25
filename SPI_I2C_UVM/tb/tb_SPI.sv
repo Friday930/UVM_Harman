@@ -259,14 +259,54 @@ class SPI_monitor extends uvm_monitor;
     endtask
 endclass //SPI_monitor extends uvm_monitor
 
+// class SPI_scoreboard extends uvm_scoreboard;
+//     `uvm_component_utils(SPI_scoreboard)
+
+//     uvm_analysis_imp #(SPI_seq_item, SPI_scoreboard) recv;
+
+//     SPI_seq_item SPI_item;
+
+//     logic [7:0] prev_tx_data = 0;  // 추가
+
+//     function new(string name = "SCO", uvm_component parent);
+//         super.new(name, parent);
+//         recv = new("READ", this);
+//     endfunction //new()
+
+//     virtual function void build_phase(uvm_phase phase);
+//         super.build_phase(phase);
+//         SPI_item = SPI_seq_item::type_id::create("ITEM");
+//     endfunction
+
+//     virtual function void write(SPI_seq_item item);
+//         SPI_item = item;
+//         // `uvm_info("SCO", $sformatf("Recieved tx_data:%0d, rx_data:%0d", item.tx_data, item.rx_data), UVM_LOW);
+//         `uvm_info("SCO", $sformatf("Recieved tx_data:%0d, rx_data:%0d", prev_tx_data, item.rx_data), UVM_LOW);
+//         // SPI_item.print(uvm_default_line_printer);
+//         if (prev_tx_data != 0 && prev_tx_data != 8'b10000000) begin
+//             if (SPI_item.rx_data == prev_tx_data ) begin
+//             `uvm_info("SCO", "*** TEST PASSED ***", UVM_NONE); 
+//             end else begin
+//                 `uvm_error("SCO", "*** TEST FAILED ***");
+//             end
+//         end
+        
+//         prev_tx_data = SPI_item.tx_data;  // 추가
+
+//     endfunction
+// endclass //SPI_scoreboard extends uvm_scoreboard -> 이전
+
 class SPI_scoreboard extends uvm_scoreboard;
     `uvm_component_utils(SPI_scoreboard)
 
     uvm_analysis_imp #(SPI_seq_item, SPI_scoreboard) recv;
-
     SPI_seq_item SPI_item;
 
-    logic [7:0] prev_tx_data = 0;  // 추가
+    // 예상 데이터 저장을 위한 큐
+    logic [7:0] write_data_queue[$];
+    logic [7:0] expected_read_data[4];
+    int transaction_count = 0;
+    bit write_phase = 1;  // Write phase인지 Read phase인지 구분
 
     function new(string name = "SCO", uvm_component parent);
         super.new(name, parent);
@@ -280,19 +320,46 @@ class SPI_scoreboard extends uvm_scoreboard;
 
     virtual function void write(SPI_seq_item item);
         SPI_item = item;
-        // `uvm_info("SCO", $sformatf("Recieved tx_data:%0d, rx_data:%0d", item.tx_data, item.rx_data), UVM_LOW);
-        `uvm_info("SCO", $sformatf("Recieved tx_data:%0d, rx_data:%0d", prev_tx_data, item.rx_data), UVM_LOW);
-        // SPI_item.print(uvm_default_line_printer);
-        if (prev_tx_data != 0 && prev_tx_data != 8'b10000000) begin
-            if (SPI_item.rx_data == prev_tx_data ) begin
-            `uvm_info("SCO", "*** TEST PASSED ***", UVM_NONE); 
-            end else begin
-                `uvm_error("SCO", "*** TEST FAILED ***");
+        transaction_count++;
+        
+        `uvm_info("SCO", $sformatf("[%0d] TX: %02h, RX: %02h", 
+                transaction_count, item.tx_data, item.rx_data), UVM_LOW);
+
+        // Phase 전환 감지
+        if (transaction_count == 6) begin
+            write_phase = 0;  // Read phase 시작
+            // Write된 데이터를 expected read data로 설정
+            for (int i = 0; i < 4; i++) begin
+                if (write_data_queue.size() > i) begin
+                    expected_read_data[i] = write_data_queue[i];
+                end else begin
+                    expected_read_data[i] = 8'h00;  // 기본값
+                end
+            end
+            // `uvm_info("SCO", "=== SWITCHING TO READ PHASE ===", UVM_NONE);
+            return;
+        end
+
+        if (write_phase) begin
+            // Write Phase: TX 데이터 저장 (명령어 제외)
+            if (transaction_count > 1) begin  // 첫 번째는 Write 명령어
+                write_data_queue.push_back(item.tx_data);
+                // `uvm_info("SCO", $sformatf("Stored write data[%0d]: %02h", 
+                //         write_data_queue.size()-1, item.tx_data), UVM_NONE);
+            end
+        end else begin
+            // Read Phase: RX 데이터 검증
+            if (transaction_count > 6) begin  // Read 명령어 이후
+                int read_index = transaction_count - 7;  // 0부터 시작
+                if (read_index < 4) begin
+                    if (item.rx_data == expected_read_data[read_index]) begin
+                        `uvm_info("SCO", $sformatf("*** READ TEST PASSED ***"), UVM_NONE);
+                    end else begin
+                        `uvm_error("SCO", $sformatf("*** READ TEST FAILED ***"));
+                    end
+                end
             end
         end
-        
-        prev_tx_data = SPI_item.tx_data;  // 추가
-
     endfunction
 endclass //SPI_scoreboard extends uvm_scoreboard
 

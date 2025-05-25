@@ -1,7 +1,7 @@
 Command: /home/hedu22/dev/SPI_I2C_UVM/././build/simv +UVM_TESTNAME=test -l ././build/simv.log +fsdbfile+./build/wave.fsdb
 Chronologic VCS simulator copyright 1991-2024
 Contains Synopsys proprietary information.
-Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  May 25 21:41 2025
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  May 26 05:22 2025
 UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
 ----------------------------------------------------------------
 UVM-1.2.Synopsys
@@ -56,69 +56,16 @@ uvm_test_top               test                    -     @342
       READ                 uvm_analysis_imp        -     @379 
 --------------------------------------------------------------
 
-UVM_INFO ./tb/tb_SPI.sv(144) @ 195000: uvm_test_top.ENV.AGT.DRV [DRV] SS = 0 (Start of Write phase)
-UVM_INFO ./tb/tb_SPI.sv(100) @ 195000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 0
-UVM_INFO ./tb/tb_SPI.sv(183) @ 205000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=128 (count=0)
-UVM_INFO ./tb/tb_SPI.sv(248) @ 8206000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:0, rx:0
-UVM_INFO ./tb/tb_SPI.sv(280) @ 8206000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:0, rx_data:0
-UVM_INFO ./tb/tb_SPI.sv(205) @ 8225000: uvm_test_top.ENV.AGT.DRV [DRV] Completed[0]: rx=0x00
-UVM_INFO ./tb/tb_SPI.sv(88) @ 8225000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 128
-UVM_INFO ./tb/tb_SPI.sv(183) @ 8235000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=201 (count=0)
-UVM_INFO ./tb/tb_SPI.sv(248) @ 16236000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:128, rx:0
-UVM_INFO ./tb/tb_SPI.sv(280) @ 16236000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:128, rx_data:0
-UVM_INFO ./tb/tb_SPI.sv(205) @ 16255000: uvm_test_top.ENV.AGT.DRV [DRV] Completed[0]: rx=0x00
-UVM_INFO ./tb/tb_SPI.sv(88) @ 16255000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 128
-UVM_INFO ./tb/tb_SPI.sv(183) @ 16265000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=53 (count=0)
-UVM_INFO ./tb/tb_SPI.sv(248) @ 24266000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:201, rx:0
-UVM_INFO ./tb/tb_SPI.sv(280) @ 24266000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:201, rx_data:0
-UVM_ERROR ./tb/tb_SPI.sv(286) @ 24266000: uvm_test_top.ENV.SCO [SCO] *** TEST FAILED ***
-UVM_INFO ./tb/tb_SPI.sv(205) @ 24285000: uvm_test_top.ENV.AGT.DRV [DRV] Completed[0]: rx=0x00
-UVM_INFO ./tb/tb_SPI.sv(88) @ 24285000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 128
-UVM_INFO ./tb/tb_SPI.sv(183) @ 24295000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=132 (count=0)
-UVM_INFO ./tb/tb_SPI.sv(248) @ 32296000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:53, rx:0
-UVM_INFO ./tb/tb_SPI.sv(280) @ 32296000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:53, rx_data:0
-UVM_ERROR ./tb/tb_SPI.sv(286) @ 32296000: uvm_test_top.ENV.SCO [SCO] *** TEST FAILED ***
-UVM_INFO ./tb/tb_SPI.sv(205) @ 32315000: uvm_test_top.ENV.AGT.DRV [DRV] Completed[0]: rx=0x00
-UVM_INFO ./tb/tb_SPI.sv(88) @ 32315000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 128
-UVM_INFO ./tb/tb_SPI.sv(183) @ 32325000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=195 (count=0)
-UVM_INFO ./tb/tb_SPI.sv(248) @ 40326000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:132, rx:0
-UVM_INFO ./tb/tb_SPI.sv(280) @ 40326000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:132, rx_data:0
-UVM_ERROR ./tb/tb_SPI.sv(286) @ 40326000: uvm_test_top.ENV.SCO [SCO] *** TEST FAILED ***
-UVM_INFO ./tb/tb_SPI.sv(205) @ 40345000: uvm_test_top.ENV.AGT.DRV [DRV] Completed[0]: rx=0x00
-UVM_INFO ./tb/tb_SPI.sv(158) @ 40345000: uvm_test_top.ENV.AGT.DRV [DRV] SS = 1 (End of Write phase)
-UVM_INFO ./tb/tb_SPI.sv(161) @ 40845000: uvm_test_top.ENV.AGT.DRV [DRV] SS = 0 (Start of Read phase)
-UVM_INFO ./tb/tb_SPI.sv(100) @ 40845000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 128
-UVM_INFO ./tb/tb_SPI.sv(183) @ 40855000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=0 (count=0)
-UVM_INFO ./tb/tb_SPI.sv(248) @ 48856000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:195, rx:195
-UVM_INFO ./tb/tb_SPI.sv(280) @ 48856000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:195, rx_data:195
-UVM_INFO ./tb/tb_SPI.sv(284) @ 48856000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED ***
-UVM_INFO ./tb/tb_SPI.sv(205) @ 48875000: uvm_test_top.ENV.AGT.DRV [DRV] Completed[0]: rx=0xc3
-UVM_INFO ./tb/tb_SPI.sv(100) @ 48875000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 0
-UVM_INFO ./tb/tb_SPI.sv(183) @ 48885000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=255 (count=0)
-UVM_INFO ./tb/tb_SPI.sv(248) @ 56886000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:0, rx:201
-UVM_INFO ./tb/tb_SPI.sv(280) @ 56886000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:0, rx_data:201
-UVM_INFO ./tb/tb_SPI.sv(205) @ 56905000: uvm_test_top.ENV.AGT.DRV [DRV] Completed[0]: rx=0xc9
-UVM_INFO ./tb/tb_SPI.sv(100) @ 56905000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 255
-UVM_INFO ./tb/tb_SPI.sv(183) @ 56915000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=255 (count=0)
-UVM_INFO ./tb/tb_SPI.sv(248) @ 64916000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:53
-UVM_INFO ./tb/tb_SPI.sv(280) @ 64916000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:255, rx_data:53
-UVM_ERROR ./tb/tb_SPI.sv(286) @ 64916000: uvm_test_top.ENV.SCO [SCO] *** TEST FAILED ***
-UVM_INFO ./tb/tb_SPI.sv(205) @ 64935000: uvm_test_top.ENV.AGT.DRV [DRV] Completed[0]: rx=0x35
-UVM_INFO ./tb/tb_SPI.sv(100) @ 64935000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 255
-UVM_INFO ./tb/tb_SPI.sv(183) @ 64945000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=255 (count=0)
-UVM_INFO ./tb/tb_SPI.sv(248) @ 72946000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:132
-UVM_INFO ./tb/tb_SPI.sv(280) @ 72946000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:255, rx_data:132
-UVM_ERROR ./tb/tb_SPI.sv(286) @ 72946000: uvm_test_top.ENV.SCO [SCO] *** TEST FAILED ***
-UVM_INFO ./tb/tb_SPI.sv(205) @ 72965000: uvm_test_top.ENV.AGT.DRV [DRV] Completed[0]: rx=0x84
-UVM_INFO ./tb/tb_SPI.sv(100) @ 72965000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 255
-UVM_INFO ./tb/tb_SPI.sv(183) @ 72975000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=255 (count=0)
-UVM_INFO ./tb/tb_SPI.sv(248) @ 80976000: uvm_test_top.ENV.AGT.MON [MON] sampled tx:255, rx:195
-UVM_INFO ./tb/tb_SPI.sv(280) @ 80976000: uvm_test_top.ENV.SCO [SCO] Recieved tx_data:255, rx_data:195
-UVM_ERROR ./tb/tb_SPI.sv(286) @ 80976000: uvm_test_top.ENV.SCO [SCO] *** TEST FAILED ***
-UVM_INFO ./tb/tb_SPI.sv(205) @ 80995000: uvm_test_top.ENV.AGT.DRV [DRV] Completed[0]: rx=0xc3
-UVM_INFO ./tb/tb_SPI.sv(167) @ 80995000: uvm_test_top.ENV.AGT.DRV [DRV] SS = 1 (End of scenario)
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 80995000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 80995000: reporter [UVM/REPORT/CATCHER] 
+UVM_INFO ./tb/tb_SPI.sv(124) @ 0: uvm_test_top.ENV.AGT.DRV [DRV] Driver started - initializing SPI interface
+UVM_INFO ./tb/tb_SPI.sv(219) @ 0: uvm_test_top.ENV.AGT.MON [MON] Monitor started - sampling SPI transactions
+UVM_INFO ./tb/tb_SPI.sv(60) @ 0: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Starting SPI test sequence
+UVM_INFO ./tb/tb_SPI.sv(265) @ 8206000: uvm_test_top.ENV.SCO [SCO] Scoreboard started - checking SPI data integrity
+UVM_INFO ./tb/tb_SPI.sv(293) @ 56436000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED *** TX:c9 = RX:c9
+UVM_INFO ./tb/tb_SPI.sv(293) @ 64466000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED *** TX:35 = RX:35
+UVM_INFO ./tb/tb_SPI.sv(293) @ 72496000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED *** TX:84 = RX:84
+UVM_INFO ./tb/tb_SPI.sv(293) @ 80526000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED *** TX:c3 = RX:c3
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 80545000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 80545000: reporter [UVM/REPORT/CATCHER] 
 --- UVM Report catcher Summary ---
 
 
@@ -129,28 +76,28 @@ Number of caught UVM_FATAL reports   :    0
 Number of caught UVM_ERROR reports   :    0
 Number of caught UVM_WARNING reports :    0
 
-UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 80995000: reporter [UVM/REPORT/SERVER] 
+UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.svh(904) @ 80545000: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   60
+UVM_INFO :   13
 UVM_WARNING :    0
-UVM_ERROR :    6
+UVM_ERROR :    0
 UVM_FATAL :    0
 ** Report counts by id
-[DRV]    24
-[MON]    10
+[DRV]     1
+[MON]     1
 [RNTST]     1
-[SCO]    17
-[SEQ]    10
+[SCO]     5
+[SEQ]     1
 [TEST_DONE]     1
 [UVM/RELNOTES]     1
 [UVM/REPORT/CATCHER]     1
 [UVMTOP]     1
 
 $finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh", line 527.
-$finish at simulation time             80995000
+$finish at simulation time             80545000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 80995000 ps
+Time: 80545000 ps
 CPU Time:      0.240 seconds;       Data structure size:   0.6Mb
-Sun May 25 21:41:02 2025
+Mon May 26 05:22:28 2025

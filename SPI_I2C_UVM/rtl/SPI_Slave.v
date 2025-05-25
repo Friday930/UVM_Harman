@@ -216,6 +216,10 @@ module SPI_Slave_Reg (
             addr_reg        <= 2'b0;
             so_start_reg    <= 1'b0;
             clk_counter_reg <= 0;
+            slv_reg[0] <= 8'h00;
+            slv_reg[1] <= 8'h00;
+            slv_reg[2] <= 8'h00;
+            slv_reg[3] <= 8'h00;
         end else begin
             state           <= state_next;
             addr_reg        <= addr_next;
@@ -243,22 +247,75 @@ module SPI_Slave_Reg (
                 end
             end
          
+            // ADDR_PHASE: begin
+            //     if (!ss_n) begin
+            //         so_start_next = 1'b1;
+            //         so_data = si_data; // two lines erase
+            //         if (si_done) begin
+            //             addr_next = si_data[1:0];
+            //             if (si_data[7]) begin
+            //                 state_next = WRITE_PHASE;
+            //             end else begin
+            //                 state_next = READ_DEALY;
+            //             end
+            //         end
+            //     end else begin
+            //         state_next = IDLE;
+            //     end
+            // end
+            
             ADDR_PHASE: begin
                 if (!ss_n) begin
                     so_start_next = 1'b1;
-                    so_data = si_data; // two lines erase
+                    
                     if (si_done) begin
                         addr_next = si_data[1:0];
                         if (si_data[7]) begin
+                            // Write 명령어: echo back
+                            so_data = si_data;
                             state_next = WRITE_PHASE;
                         end else begin
+                            // Read 명령어: 레지스터 데이터
+                            so_data = slv_reg[si_data[1:0]];
                             state_next = READ_DEALY;
                         end
+                    end else begin
+                        // 명령어 수신 중: 기본값
+                        so_data = 8'h00;
                     end
                 end else begin
                     state_next = IDLE;
                 end
             end
+
+            // ADDR_PHASE: begin
+            //     if (!ss_n) begin
+            //         so_start_next = 1'b1;
+                    
+            //         if (si_done && si_data == 8'h00) begin
+            //             // Read 명령어 완료 후
+            //             so_data = slv_reg[0];
+            //         end else if (si_done && si_data == 8'h80) begin
+            //             // Write 명령어 완료 후
+            //             so_data = si_data;
+            //         end else begin
+            //             // 명령어 수신 중 또는 기타
+            //             so_data = 8'h00;
+            //         end
+                    
+            //         if (si_done) begin
+            //             addr_next = si_data[1:0];
+            //             if (si_data[7]) begin
+            //                 state_next = WRITE_PHASE;
+            //             end else begin
+            //                 state_next = READ_DEALY;
+            //             end
+            //         end
+            //     end else begin
+            //         state_next = IDLE;
+            //     end
+            // end
+
             WRITE_PHASE: begin
                 if (!ss_n) begin
                     // so_start_next = 1'b1;

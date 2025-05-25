@@ -233,7 +233,7 @@ FindBarVisible =
 recent_commands_Verdi = tbvDebugRunContinue,tbvRunDebugMode
 ColorTheme = classic
 version = Verdi_W-2024.09-SP2
-recent_commands_nWave = getSignal,zoomIn,zoomOut,editCut,openFile
+recent_commands_nWave = getSignal,editCut,zoomIn,zoomOut,openFile
 prevColorTheme = classic
 SignalCaseInSensitive = FALSE
 [GlobalProp]
@@ -395,8 +395,8 @@ savePropDtl = TRUE
 openFileDlg = 979,478,602,483
 tipViewerDlg = 751,371,398,259
 QwWarnMsgDlg = 970,555,600,250
-qWaveSignalDialog = 888,476,800,479
-QwUserAskDlg = 1116,587,324,125
+qWaveSignalDialog = 570,322,800,479
+QwUserAskDlg = 798,433,324,125
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -603,7 +603,7 @@ pdmlMacro = ID_BLACK
 font = COURIER12
 annotFont = FIXED12
 [Text.1]
-viewport = 8 31 2560 1369 45
+viewport = 8 31 1924 1061 45
 [TextPrinter]
 Orientation = Landscape
 Indicator = FALSE
@@ -772,9 +772,9 @@ isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
-name = "Block's First Line"
+name = "Type"
 width = 60
-visualIndex = 1
+visualIndex = 4
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
@@ -786,9 +786,9 @@ isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
-name = "Type"
+name = "Block's First Line"
 width = 60
-visualIndex = 4
+visualIndex = 1
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
@@ -801,8 +801,8 @@ parRulePathInterForm = ""
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 888 476 800 479 220 387 484 187
-viewPort = 0 25 2560 661 123 65
+getSignalForm = 570 322 800 479 220 387 484 187
+viewPort = 0 25 1924 727 123 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -1074,4 +1074,4 @@ HighlightSameNet = TRUE
 [turbo_library]
 bdb_load_scope = 
 [wave.0]
-viewPort = 0 25 2560 661 123 65
+viewPort = 0 25 1924 727 123 65
