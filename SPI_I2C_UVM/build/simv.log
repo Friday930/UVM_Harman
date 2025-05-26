@@ -1,7 +1,7 @@
 Command: /home/hedu22/dev/SPI_I2C_UVM/././build/simv +UVM_TESTNAME=test -l ././build/simv.log +fsdbfile+./build/wave.fsdb
 Chronologic VCS simulator copyright 1991-2024
 Contains Synopsys proprietary information.
-Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  May 26 05:22 2025
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  May 26 09:12 2025
 UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
 ----------------------------------------------------------------
 UVM-1.2.Synopsys
@@ -56,14 +56,55 @@ uvm_test_top               test                    -     @342
       READ                 uvm_analysis_imp        -     @379 
 --------------------------------------------------------------
 
-UVM_INFO ./tb/tb_SPI.sv(124) @ 0: uvm_test_top.ENV.AGT.DRV [DRV] Driver started - initializing SPI interface
-UVM_INFO ./tb/tb_SPI.sv(219) @ 0: uvm_test_top.ENV.AGT.MON [MON] Monitor started - sampling SPI transactions
-UVM_INFO ./tb/tb_SPI.sv(60) @ 0: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Starting SPI test sequence
-UVM_INFO ./tb/tb_SPI.sv(265) @ 8206000: uvm_test_top.ENV.SCO [SCO] Scoreboard started - checking SPI data integrity
-UVM_INFO ./tb/tb_SPI.sv(293) @ 56436000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED *** TX:c9 = RX:c9
-UVM_INFO ./tb/tb_SPI.sv(293) @ 64466000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED *** TX:35 = RX:35
-UVM_INFO ./tb/tb_SPI.sv(293) @ 72496000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED *** TX:84 = RX:84
-UVM_INFO ./tb/tb_SPI.sv(293) @ 80526000: uvm_test_top.ENV.SCO [SCO] *** TEST PASSED *** TX:c3 = RX:c3
+UVM_INFO ./tb/tb_SPI.sv(578) @ 195000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 80
+UVM_INFO ./tb/tb_SPI.sv(659) @ 205000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=80
+UVM_INFO ./tb/tb_SPI.sv(720) @ 8206000: uvm_test_top.ENV.AGT.MON [MON] sampled tx_data:80, rx_data:00
+UVM_INFO ./tb/tb_SPI.sv(792) @ 8206000: uvm_test_top.ENV.SCO [SCO] [1] tx_data: 80, rx_data: 00
+UVM_INFO ./tb/tb_SPI.sv(566) @ 8225000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: c9
+UVM_INFO ./tb/tb_SPI.sv(659) @ 8235000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=c9
+UVM_INFO ./tb/tb_SPI.sv(720) @ 16236000: uvm_test_top.ENV.AGT.MON [MON] sampled tx_data:c9, rx_data:00
+UVM_INFO ./tb/tb_SPI.sv(792) @ 16236000: uvm_test_top.ENV.SCO [SCO] [2] tx_data: c9, rx_data: 00
+UVM_INFO ./tb/tb_SPI.sv(814) @ 16236000: uvm_test_top.ENV.SCO [SCO] Stored write data[0]: c9
+UVM_INFO ./tb/tb_SPI.sv(566) @ 16255000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 35
+UVM_INFO ./tb/tb_SPI.sv(659) @ 16265000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=35
+UVM_INFO ./tb/tb_SPI.sv(720) @ 24266000: uvm_test_top.ENV.AGT.MON [MON] sampled tx_data:35, rx_data:00
+UVM_INFO ./tb/tb_SPI.sv(792) @ 24266000: uvm_test_top.ENV.SCO [SCO] [3] tx_data: 35, rx_data: 00
+UVM_INFO ./tb/tb_SPI.sv(814) @ 24266000: uvm_test_top.ENV.SCO [SCO] Stored write data[1]: 35
+UVM_INFO ./tb/tb_SPI.sv(566) @ 24285000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: 84
+UVM_INFO ./tb/tb_SPI.sv(659) @ 24295000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=84
+UVM_INFO ./tb/tb_SPI.sv(720) @ 32296000: uvm_test_top.ENV.AGT.MON [MON] sampled tx_data:84, rx_data:00
+UVM_INFO ./tb/tb_SPI.sv(792) @ 32296000: uvm_test_top.ENV.SCO [SCO] [4] tx_data: 84, rx_data: 00
+UVM_INFO ./tb/tb_SPI.sv(814) @ 32296000: uvm_test_top.ENV.SCO [SCO] Stored write data[2]: 84
+UVM_INFO ./tb/tb_SPI.sv(566) @ 32315000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Random tx_data: c3
+UVM_INFO ./tb/tb_SPI.sv(659) @ 32325000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=c3
+UVM_INFO ./tb/tb_SPI.sv(720) @ 40326000: uvm_test_top.ENV.AGT.MON [MON] sampled tx_data:c3, rx_data:00
+UVM_INFO ./tb/tb_SPI.sv(792) @ 40326000: uvm_test_top.ENV.SCO [SCO] [5] tx_data: c3, rx_data: 00
+UVM_INFO ./tb/tb_SPI.sv(814) @ 40326000: uvm_test_top.ENV.SCO [SCO] Stored write data[3]: c3
+UVM_INFO ./tb/tb_SPI.sv(578) @ 40345000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: 00
+UVM_INFO ./tb/tb_SPI.sv(659) @ 40405000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=00
+UVM_INFO ./tb/tb_SPI.sv(720) @ 48406000: uvm_test_top.ENV.AGT.MON [MON] sampled tx_data:00, rx_data:00
+UVM_INFO ./tb/tb_SPI.sv(792) @ 48406000: uvm_test_top.ENV.SCO [SCO] [6] tx_data: 00, rx_data: 00
+UVM_INFO ./tb/tb_SPI.sv(806) @ 48406000: uvm_test_top.ENV.SCO [SCO] === SWITCHING TO READ PHASE ===
+UVM_INFO ./tb/tb_SPI.sv(578) @ 48425000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: ff
+UVM_INFO ./tb/tb_SPI.sv(659) @ 48435000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=ff
+UVM_INFO ./tb/tb_SPI.sv(720) @ 56436000: uvm_test_top.ENV.AGT.MON [MON] sampled tx_data:ff, rx_data:c9
+UVM_INFO ./tb/tb_SPI.sv(792) @ 56436000: uvm_test_top.ENV.SCO [SCO] [7] tx_data: ff, rx_data: c9
+UVM_INFO ./tb/tb_SPI.sv(823) @ 56436000: uvm_test_top.ENV.SCO [SCO] *** READ TEST PASSED [0]: Expected=c9, Got=c9 ***
+UVM_INFO ./tb/tb_SPI.sv(578) @ 56455000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: ff
+UVM_INFO ./tb/tb_SPI.sv(659) @ 56465000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=ff
+UVM_INFO ./tb/tb_SPI.sv(720) @ 64466000: uvm_test_top.ENV.AGT.MON [MON] sampled tx_data:ff, rx_data:35
+UVM_INFO ./tb/tb_SPI.sv(792) @ 64466000: uvm_test_top.ENV.SCO [SCO] [8] tx_data: ff, rx_data: 35
+UVM_INFO ./tb/tb_SPI.sv(823) @ 64466000: uvm_test_top.ENV.SCO [SCO] *** READ TEST PASSED [1]: Expected=35, Got=35 ***
+UVM_INFO ./tb/tb_SPI.sv(578) @ 64485000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: ff
+UVM_INFO ./tb/tb_SPI.sv(659) @ 64495000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=ff
+UVM_INFO ./tb/tb_SPI.sv(720) @ 72496000: uvm_test_top.ENV.AGT.MON [MON] sampled tx_data:ff, rx_data:84
+UVM_INFO ./tb/tb_SPI.sv(792) @ 72496000: uvm_test_top.ENV.SCO [SCO] [9] tx_data: ff, rx_data: 84
+UVM_INFO ./tb/tb_SPI.sv(823) @ 72496000: uvm_test_top.ENV.SCO [SCO] *** READ TEST PASSED [2]: Expected=84, Got=84 ***
+UVM_INFO ./tb/tb_SPI.sv(578) @ 72515000: uvm_test_top.ENV.AGT.SQR@@SEQ [SEQ] Fixed tx_data: ff
+UVM_INFO ./tb/tb_SPI.sv(659) @ 72525000: uvm_test_top.ENV.AGT.DRV [DRV] Drive dut: tx=ff
+UVM_INFO ./tb/tb_SPI.sv(720) @ 80526000: uvm_test_top.ENV.AGT.MON [MON] sampled tx_data:ff, rx_data:c3
+UVM_INFO ./tb/tb_SPI.sv(792) @ 80526000: uvm_test_top.ENV.SCO [SCO] [10] tx_data: ff, rx_data: c3
+UVM_INFO ./tb/tb_SPI.sv(823) @ 80526000: uvm_test_top.ENV.SCO [SCO] *** READ TEST PASSED [3]: Expected=c3, Got=c3 ***
 UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 80545000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 80545000: reporter [UVM/REPORT/CATCHER] 
 --- UVM Report catcher Summary ---
@@ -80,16 +121,16 @@ UVM_INFO /tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm_report_server.sv
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   13
+UVM_INFO :   54
 UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
 ** Report counts by id
-[DRV]     1
-[MON]     1
+[DRV]    10
+[MON]    10
 [RNTST]     1
-[SCO]     5
-[SEQ]     1
+[SCO]    19
+[SEQ]    10
 [TEST_DONE]     1
 [UVM/RELNOTES]     1
 [UVM/REPORT/CATCHER]     1
@@ -99,5 +140,5 @@ $finish called from file "/tools/synopsys/vcs/W-2024.09-SP1/etc/uvm-1.2/base/uvm
 $finish at simulation time             80545000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 80545000 ps
-CPU Time:      0.240 seconds;       Data structure size:   0.6Mb
-Mon May 26 05:22:28 2025
+CPU Time:      0.230 seconds;       Data structure size:   0.6Mb
+Mon May 26 09:12:58 2025
